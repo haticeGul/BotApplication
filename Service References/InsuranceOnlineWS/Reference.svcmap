@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ce553954-ca6d-4324-bb05-b8c04ecea5c5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InsuranceService.xsd" MetadataType="Schema" ID="83144b09-1633-4dcd-9225-8858dde10eae" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd15" />
+    <MetadataFile FileName="InsuranceService.disco" MetadataType="Disco" ID="5bad94e3-7dec-4bc6-81a6-9df91d6e423d" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?disco" />
+    <MetadataFile FileName="InsuranceService1.xsd" MetadataType="Schema" ID="2b750b19-42e8-4983-9b10-7b3db29fd773" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd18" />
+    <MetadataFile FileName="InsuranceService2.xsd" MetadataType="Schema" ID="a9677c0a-d98f-4c9a-8090-020b5398148c" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd16" />
+    <MetadataFile FileName="InsuranceService3.xsd" MetadataType="Schema" ID="21128cc4-b718-4e96-a0ad-218411f0297c" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd7" />
+    <MetadataFile FileName="InsuranceService4.xsd" MetadataType="Schema" ID="04c63a99-0c31-40aa-840a-93c0568f8d4b" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd13" />
+    <MetadataFile FileName="InsuranceService5.xsd" MetadataType="Schema" ID="f9770aab-53b5-4133-8b40-7d3f31179645" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd23" />
+    <MetadataFile FileName="InsuranceService6.xsd" MetadataType="Schema" ID="9ff547ed-0cd4-4946-bc6f-ccf4e5714b29" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd14" />
+    <MetadataFile FileName="InsuranceService.wsdl" MetadataType="Wsdl" ID="cc28d190-e371-425c-8034-d7ab56f03ad4" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?wsdl" />
+    <MetadataFile FileName="InsuranceService7.xsd" MetadataType="Schema" ID="f6c2a7ca-150e-419b-88af-30de28a305ac" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd11" />
+    <MetadataFile FileName="InsuranceService8.xsd" MetadataType="Schema" ID="346f957a-7942-4b46-9fd0-c2fde254bacd" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd21" />
+    <MetadataFile FileName="InsuranceService9.xsd" MetadataType="Schema" ID="3be05c5e-5e60-4fd9-805e-d13126781458" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd4" />
+    <MetadataFile FileName="InsuranceService10.xsd" MetadataType="Schema" ID="f3272090-e3dd-4643-b099-3f6a645a9452" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd5" />
+    <MetadataFile FileName="InsuranceService11.xsd" MetadataType="Schema" ID="432ff026-ac4c-46e8-9fe0-f3db7263bebe" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd6" />
+    <MetadataFile FileName="InsuranceService12.xsd" MetadataType="Schema" ID="df494e0e-5227-42ae-b01e-5d08c8c32c83" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd22" />
+    <MetadataFile FileName="InsuranceService13.xsd" MetadataType="Schema" ID="c5065068-874a-43f7-a3b4-2377e945d9bc" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="InsuranceService14.xsd" MetadataType="Schema" ID="bd98ba47-7c7b-4ac9-992a-b9b5c3b3093a" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="InsuranceService15.xsd" MetadataType="Schema" ID="52b448be-d8f6-43eb-8d31-8b7bb4b484b6" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="InsuranceService16.xsd" MetadataType="Schema" ID="a8ed8f1c-73e2-4710-8b26-dadd29c61b3d" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="InsuranceService17.xsd" MetadataType="Schema" ID="ab6e09d0-08ff-4ce4-b158-8ec9c4fdec2c" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd17" />
+    <MetadataFile FileName="InsuranceService18.xsd" MetadataType="Schema" ID="b7edee42-9287-4cb3-a556-9a6cbec607c1" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd8" />
+    <MetadataFile FileName="InsuranceService19.xsd" MetadataType="Schema" ID="6af7b580-9919-431b-bd87-c4de98a67ae5" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd9" />
+    <MetadataFile FileName="InsuranceService20.xsd" MetadataType="Schema" ID="39bb2221-68dc-4b1d-b846-818bd09958e5" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd12" />
+    <MetadataFile FileName="InsuranceService21.xsd" MetadataType="Schema" ID="764a8fde-1319-4aef-a92f-0a9fb05a43ba" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd19" />
+    <MetadataFile FileName="InsuranceService22.xsd" MetadataType="Schema" ID="8309edc7-5c3a-4b1f-be7c-2cbba2de02ef" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd10" />
+    <MetadataFile FileName="InsuranceService23.xsd" MetadataType="Schema" ID="d4d106c5-d8b2-49df-86f4-49325c46c049" SourceId="1" SourceUrl="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd20" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

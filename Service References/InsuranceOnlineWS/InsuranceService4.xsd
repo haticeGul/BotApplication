@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Enumerations" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Enumerations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="SelfServiceOfferReturnCodes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Initial" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="CannotFoundOffer" />
+      <xs:enumeration value="AlreadyOffered" />
+      <xs:enumeration value="AlreadyMadePolicy" />
+      <xs:enumeration value="PolicyNotFound" />
+      <xs:enumeration value="Fail" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SelfServiceOfferReturnCodes" nillable="true" type="tns:SelfServiceOfferReturnCodes" />
+  <xs:simpleType name="CustomerCommunicationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Address" />
+      <xs:enumeration value="Telephone" />
+      <xs:enumeration value="Fax" />
+      <xs:enumeration value="Email" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CustomerCommunicationType" nillable="true" type="tns:CustomerCommunicationType" />
+  <xs:simpleType name="CustomerCommunicationSubType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Home" />
+      <xs:enumeration value="Work" />
+      <xs:enumeration value="Mobile" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CustomerCommunicationSubType" nillable="true" type="tns:CustomerCommunicationSubType" />
+</xs:schema>

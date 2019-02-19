@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Offer" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.Customer" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Customer" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Operation" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Renewal" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Vehicle" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.VDFInsuranceWS" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Support" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Security" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Bentas" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Collection" />
+  <xs:complexType name="ResponseMessageOfArrayOfPCCampaingCustomerInfoISE_P3Nmm">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPCCampaingCustomerInfo" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" minOccurs="0" name="Message" nillable="true" type="q1:ArrayOfPCCampaingCustomerInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfPCCampaingCustomerInfoISE_P3Nmm" nillable="true" type="tns:ResponseMessageOfArrayOfPCCampaingCustomerInfoISE_P3Nmm" />
+  <xs:complexType name="ResponseMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorType" type="tns:ResponseErrorType" />
+      <xs:element minOccurs="0" name="ReturnCode" type="tns:RetCode" />
+      <xs:element minOccurs="0" name="TotalRecordCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseMessage" nillable="true" type="tns:ResponseMessage" />
+  <xs:simpleType name="ResponseErrorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoError" />
+      <xs:enumeration value="System" />
+      <xs:enumeration value="Business" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResponseErrorType" nillable="true" type="tns:ResponseErrorType" />
+  <xs:simpleType name="RetCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Fail">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RecordNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DuplicateRecord">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RetCode" nillable="true" type="tns:RetCode" />
+  <xs:complexType name="ResponseMessageOfArrayOfPCCampaingDefinitionISE_P3Nmm">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPCCampaingDefinition" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" minOccurs="0" name="Message" nillable="true" type="q2:ArrayOfPCCampaingDefinition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfPCCampaingDefinitionISE_P3Nmm" nillable="true" type="tns:ResponseMessageOfArrayOfPCCampaingDefinitionISE_P3Nmm" />
+  <xs:complexType name="ResponseMessageOfDoResponsegJjm7MZu">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DoResponse" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Offer" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Offer" minOccurs="0" name="Message" nillable="true" type="q3:DoResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfDoResponsegJjm7MZu" nillable="true" type="tns:ResponseMessageOfDoResponsegJjm7MZu" />
+  <xs:complexType name="ResponseMessageOfint">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Message" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfint" nillable="true" type="tns:ResponseMessageOfint" />
+  <xs:complexType name="ResponseMessageOfArrayOfPCInsuranceFirmaD1_SLJRT">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPCInsuranceFirm" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" minOccurs="0" name="Message" nillable="true" type="q4:ArrayOfPCInsuranceFirm" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfPCInsuranceFirmaD1_SLJRT" nillable="true" type="tns:ResponseMessageOfArrayOfPCInsuranceFirmaD1_SLJRT" />
+  <xs:complexType name="ResponseMessageOfArrayOfview_ParParameterKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfview_ParParameter" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q5:ArrayOfview_ParParameter" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfview_ParParameterKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfArrayOfview_ParParameterKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfArrayOfview_ParSubParameterKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfview_ParSubParameter" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q6:ArrayOfview_ParSubParameter" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfview_ParSubParameterKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfArrayOfview_ParSubParameterKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfArrayOfPCUsageTypeaD1_SLJRT">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPCUsageType" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" minOccurs="0" name="Message" nillable="true" type="q7:ArrayOfPCUsageType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfPCUsageTypeaD1_SLJRT" nillable="true" type="tns:ResponseMessageOfArrayOfPCUsageTypeaD1_SLJRT" />
+  <xs:complexType name="ResponseMessageOfArrayOfPcAreaCodeISE_P3Nmm">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPcAreaCode" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" minOccurs="0" name="Message" nillable="true" type="q8:ArrayOfPcAreaCode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfPcAreaCodeISE_P3Nmm" nillable="true" type="tns:ResponseMessageOfArrayOfPcAreaCodeISE_P3Nmm" />
+  <xs:complexType name="ResponseMessageOfArrayOfKeyValueOfstringstringuHEDJ7Dj">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfKeyValueOf{0}{1}{#}" Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+            <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+            <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+          </GenericParameter>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Message" nillable="true" type="q9:ArrayOfKeyValueOfstringstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfKeyValueOfstringstringuHEDJ7Dj" nillable="true" type="tns:ResponseMessageOfArrayOfKeyValueOfstringstringuHEDJ7Dj" />
+  <xs:complexType name="ResponseMessageOfMobilServiceLogKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="MobilServiceLog" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q10:MobilServiceLog" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfMobilServiceLogKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfMobilServiceLogKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfview_ParSubParameterKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="view_ParSubParameter" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q11:view_ParSubParameter" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfview_ParSubParameterKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfview_ParSubParameterKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfbase64Binary">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="base64Binary" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfbase64Binary" nillable="true" type="tns:ResponseMessageOfbase64Binary" />
+  <xs:complexType name="ResponseMessageOfPCAddressWHr5_S_P2w">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PCAddress" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.Customer" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.Customer" minOccurs="0" name="Message" nillable="true" type="q12:PCAddress" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfPCAddressWHr5_S_P2w" nillable="true" type="tns:ResponseMessageOfPCAddressWHr5_S_P2w" />
+  <xs:complexType name="ResponseMessageOfIS_CustomerProductKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IS_CustomerProduct" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q13:IS_CustomerProduct" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfIS_CustomerProductKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfIS_CustomerProductKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfArrayOfPCCustomerAddressesRelatedWithOffertY9PdCPl">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPCCustomerAddressesRelatedWithOffer" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Customer" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Customer" minOccurs="0" name="Message" nillable="true" type="q14:ArrayOfPCCustomerAddressesRelatedWithOffer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfPCCustomerAddressesRelatedWithOffertY9PdCPl" nillable="true" type="tns:ResponseMessageOfArrayOfPCCustomerAddressesRelatedWithOffertY9PdCPl" />
+  <xs:complexType name="ResponseMessageOfArrayOfPCCustomerCommunicationInfoISE_P3Nmm">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPCCustomerCommunicationInfo" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" minOccurs="0" name="Message" nillable="true" type="q15:ArrayOfPCCustomerCommunicationInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfPCCustomerCommunicationInfoISE_P3Nmm" nillable="true" type="tns:ResponseMessageOfArrayOfPCCustomerCommunicationInfoISE_P3Nmm" />
+  <xs:complexType name="ResponseMessageOfIS_CustomerKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IS_Customer" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q16:IS_Customer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfIS_CustomerKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfIS_CustomerKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfArrayOfview_AddressKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfview_Address" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q17:ArrayOfview_Address" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfview_AddressKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfArrayOfview_AddressKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfview_AddressKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="view_Address" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q18:view_Address" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfview_AddressKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfview_AddressKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfstring" nillable="true" type="tns:ResponseMessageOfstring" />
+  <xs:complexType name="ResponseMessageOfPCPermittedMarketingResultDetailms0ZHSUN">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PCPermittedMarketingResultDetail" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Operation" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Operation" minOccurs="0" name="Message" nillable="true" type="q19:PCPermittedMarketingResultDetail" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfPCPermittedMarketingResultDetailms0ZHSUN" nillable="true" type="tns:ResponseMessageOfPCPermittedMarketingResultDetailms0ZHSUN" />
+  <xs:complexType name="ResponseMessageOfboolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Message" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfboolean" nillable="true" type="tns:ResponseMessageOfboolean" />
+  <xs:complexType name="ResponseMessageOfview_CustomerKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="view_Customer" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q20:view_Customer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfview_CustomerKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfview_CustomerKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfCreateCustomerAndProductForNewSaleResponseofDGA4Jz">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CreateCustomerAndProductForNewSaleResponse" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Renewal" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Renewal" minOccurs="0" name="Message" nillable="true" type="q21:CreateCustomerAndProductForNewSaleResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfCreateCustomerAndProductForNewSaleResponseofDGA4Jz" nillable="true" type="tns:ResponseMessageOfCreateCustomerAndProductForNewSaleResponseofDGA4Jz" />
+  <xs:complexType name="ResponseMessageOfPCBentasPolicyVehicleInfoZ094EfyP">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PCBentasPolicyVehicleInfo" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Vehicle" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Vehicle" minOccurs="0" name="Message" nillable="true" type="q22:PCBentasPolicyVehicleInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfPCBentasPolicyVehicleInfoZ094EfyP" nillable="true" type="tns:ResponseMessageOfPCBentasPolicyVehicleInfoZ094EfyP" />
+  <xs:complexType name="ResponseMessageOfArrayOfview_VDFCustomerAddressListKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfview_VDFCustomerAddressList" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q23:ArrayOfview_VDFCustomerAddressList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfview_VDFCustomerAddressListKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfArrayOfview_VDFCustomerAddressListKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfArrayOfIS_CommunicationKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfIS_Communication" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q24:ArrayOfIS_Communication" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfIS_CommunicationKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfArrayOfIS_CommunicationKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfview_MatchedBentasPolicesWithVehicleInfoKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="view_MatchedBentasPolicesWithVehicleInfo" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q25:view_MatchedBentasPolicesWithVehicleInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfview_MatchedBentasPolicesWithVehicleInfoKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfview_MatchedBentasPolicesWithVehicleInfoKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfArrayOfIS_ProductOfferKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfIS_ProductOffer" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q26:ArrayOfIS_ProductOffer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfIS_ProductOfferKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfArrayOfIS_ProductOfferKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfIS_CustomerVehicleKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IS_CustomerVehicle" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q27:IS_CustomerVehicle" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfIS_CustomerVehicleKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfIS_CustomerVehicleKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfIS_ProductOfferKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IS_ProductOffer" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q28:IS_ProductOffer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfIS_ProductOfferKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfIS_ProductOfferKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfMobileRenewalParametersofDGA4Jz">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="MobileRenewalParameters" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Renewal" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Renewal" minOccurs="0" name="Message" nillable="true" type="q29:MobileRenewalParameters" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfMobileRenewalParametersofDGA4Jz" nillable="true" type="tns:ResponseMessageOfMobileRenewalParametersofDGA4Jz" />
+  <xs:complexType name="ResponseMessageOfMobilePolicySummarygJjm7MZu">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="MobilePolicySummary" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Offer" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Offer" minOccurs="0" name="Message" nillable="true" type="q30:MobilePolicySummary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfMobilePolicySummarygJjm7MZu" nillable="true" type="tns:ResponseMessageOfMobilePolicySummarygJjm7MZu" />
+  <xs:complexType name="ResponseMessageOfPreviousPolicyResponseO2F5P8sB">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PreviousPolicyResponse" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.VDFInsuranceWS" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.VDFInsuranceWS" minOccurs="0" name="Message" nillable="true" type="q31:PreviousPolicyResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfPreviousPolicyResponseO2F5P8sB" nillable="true" type="tns:ResponseMessageOfPreviousPolicyResponseO2F5P8sB" />
+  <xs:complexType name="ResponseMessageOfArrayOfPCVehicleModel4mA3Gz_S2">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPCVehicleModel" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Support" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Support" minOccurs="0" name="Message" nillable="true" type="q32:ArrayOfPCVehicleModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfPCVehicleModel4mA3Gz_S2" nillable="true" type="tns:ResponseMessageOfArrayOfPCVehicleModel4mA3Gz_S2" />
+  <xs:complexType name="ResponseMessageOfArrayOfPCVehicleBrand4mA3Gz_S2">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPCVehicleBrand" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Support" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Support" minOccurs="0" name="Message" nillable="true" type="q33:ArrayOfPCVehicleBrand" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfPCVehicleBrand4mA3Gz_S2" nillable="true" type="tns:ResponseMessageOfArrayOfPCVehicleBrand4mA3Gz_S2" />
+  <xs:complexType name="ResponseMessageOfArrayOfPCVehicleSubModel4mA3Gz_S2">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPCVehicleSubModel" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Support" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Support" minOccurs="0" name="Message" nillable="true" type="q34:ArrayOfPCVehicleSubModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfPCVehicleSubModel4mA3Gz_S2" nillable="true" type="tns:ResponseMessageOfArrayOfPCVehicleSubModel4mA3Gz_S2" />
+  <xs:complexType name="ResponseMessageOfPCVehicleSubModel4mA3Gz_S2">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PCVehicleSubModel" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Support" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Support" minOccurs="0" name="Message" nillable="true" type="q35:PCVehicleSubModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfPCVehicleSubModel4mA3Gz_S2" nillable="true" type="tns:ResponseMessageOfPCVehicleSubModel4mA3Gz_S2" />
+  <xs:complexType name="ResponseMessageOfArrayOfPCGeneralOfferResponseaD1_SLJRT">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPCGeneralOfferResponse" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" minOccurs="0" name="Message" nillable="true" type="q36:ArrayOfPCGeneralOfferResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfPCGeneralOfferResponseaD1_SLJRT" nillable="true" type="tns:ResponseMessageOfArrayOfPCGeneralOfferResponseaD1_SLJRT" />
+  <xs:complexType name="ResponseMessageOfGuestCustomerInfo4PmyTwbE">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="GuestCustomerInfo" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Security" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Security" minOccurs="0" name="Message" nillable="true" type="q37:GuestCustomerInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfGuestCustomerInfo4PmyTwbE" nillable="true" type="tns:ResponseMessageOfGuestCustomerInfo4PmyTwbE" />
+  <xs:complexType name="ResponseMessageOfArrayOfview_CustomerTaskvOSCZq0G">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfview_CustomerTask" Namespace="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" minOccurs="0" name="Message" nillable="true" type="q38:ArrayOfview_CustomerTask" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfview_CustomerTaskvOSCZq0G" nillable="true" type="tns:ResponseMessageOfArrayOfview_CustomerTaskvOSCZq0G" />
+  <xs:complexType name="ResponseMessageOfArrayOfParTaskSubCategoryvOSCZq0G">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfParTaskSubCategory" Namespace="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" minOccurs="0" name="Message" nillable="true" type="q39:ArrayOfParTaskSubCategory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfParTaskSubCategoryvOSCZq0G" nillable="true" type="tns:ResponseMessageOfArrayOfParTaskSubCategoryvOSCZq0G" />
+  <xs:complexType name="ResponseMessageOfParTaskSubCategoryvOSCZq0G">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ParTaskSubCategory" Namespace="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" minOccurs="0" name="Message" nillable="true" type="q40:ParTaskSubCategory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfParTaskSubCategoryvOSCZq0G" nillable="true" type="tns:ResponseMessageOfParTaskSubCategoryvOSCZq0G" />
+  <xs:complexType name="ResponseMessageOfTaskFilevOSCZq0G">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="TaskFile" Namespace="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" minOccurs="0" name="Message" nillable="true" type="q41:TaskFile" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfTaskFilevOSCZq0G" nillable="true" type="tns:ResponseMessageOfTaskFilevOSCZq0G" />
+  <xs:complexType name="ResponseMessageOfTaskvOSCZq0G">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Task" Namespace="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" minOccurs="0" name="Message" nillable="true" type="q42:Task" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfTaskvOSCZq0G" nillable="true" type="tns:ResponseMessageOfTaskvOSCZq0G" />
+  <xs:complexType name="ResponseMessageOfPCInsuranceCusCallResultaD1_SLJRT">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PCInsuranceCusCallResult" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" minOccurs="0" name="Message" nillable="true" type="q43:PCInsuranceCusCallResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfPCInsuranceCusCallResultaD1_SLJRT" nillable="true" type="tns:ResponseMessageOfPCInsuranceCusCallResultaD1_SLJRT" />
+  <xs:complexType name="ResponseMessageOfArrayOfview_ActivePoliciesKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfview_ActivePolicies" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q44:ArrayOfview_ActivePolicies" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfview_ActivePoliciesKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfArrayOfview_ActivePoliciesKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfArrayOfPCPolicyCollectionResultDetailISE_P3Nmm">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPCPolicyCollectionResultDetail" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" minOccurs="0" name="Message" nillable="true" type="q45:ArrayOfPCPolicyCollectionResultDetail" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfPCPolicyCollectionResultDetailISE_P3Nmm" nillable="true" type="tns:ResponseMessageOfArrayOfPCPolicyCollectionResultDetailISE_P3Nmm" />
+  <xs:complexType name="ResponseMessageOfArrayOfview_GetCustomersNotificationKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfview_GetCustomersNotification" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q46:ArrayOfview_GetCustomersNotification" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfview_GetCustomersNotificationKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfArrayOfview_GetCustomersNotificationKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfPCBentasPolPropDetail30fOR8Li">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PCBentasPolPropDetail" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Bentas" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Bentas" minOccurs="0" name="Message" nillable="true" type="q47:PCBentasPolPropDetail" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfPCBentasPolPropDetail30fOR8Li" nillable="true" type="tns:ResponseMessageOfPCBentasPolPropDetail30fOR8Li" />
+  <xs:complexType name="ResponseMessageOfArrayOfBentasPolicyPropertyKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfBentasPolicyProperty" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q48:ArrayOfBentasPolicyProperty" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfBentasPolicyPropertyKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfArrayOfBentasPolicyPropertyKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfPCCreatePolicyResponsegJjm7MZu">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PCCreatePolicyResponse" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Offer" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Offer" minOccurs="0" name="Message" nillable="true" type="q49:PCCreatePolicyResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfPCCreatePolicyResponsegJjm7MZu" nillable="true" type="tns:ResponseMessageOfPCCreatePolicyResponsegJjm7MZu" />
+  <xs:complexType name="ResponseMessageOfArrayOfPCCustomerProducttY9PdCPl">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPCCustomerProduct" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Customer" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Customer" minOccurs="0" name="Message" nillable="true" type="q50:ArrayOfPCCustomerProduct" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfPCCustomerProducttY9PdCPl" nillable="true" type="tns:ResponseMessageOfArrayOfPCCustomerProducttY9PdCPl" />
+  <xs:complexType name="ResponseMessageOfArrayOfIS_AddressHistoryKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfIS_AddressHistory" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q51:ArrayOfIS_AddressHistory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfArrayOfIS_AddressHistoryKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfArrayOfIS_AddressHistoryKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfBentasPolicyKqtyDP_PV">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="BentasPolicy" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="Message" nillable="true" type="q52:BentasPolicy" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfBentasPolicyKqtyDP_PV" nillable="true" type="tns:ResponseMessageOfBentasPolicyKqtyDP_PV" />
+  <xs:complexType name="ResponseMessageOfPCMessageActionLogn7NY9Yzd">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PCMessageActionLog" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Collection" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Collection" minOccurs="0" name="Message" nillable="true" type="q53:PCMessageActionLog" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfPCMessageActionLogn7NY9Yzd" nillable="true" type="tns:ResponseMessageOfPCMessageActionLogn7NY9Yzd" />
+  <xs:complexType name="ResponseMessageOfPCCustomerCommunicationInfoISE_P3Nmm">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PCCustomerCommunicationInfo" Namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" minOccurs="0" name="Message" nillable="true" type="q54:PCCustomerCommunicationInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfPCCustomerCommunicationInfoISE_P3Nmm" nillable="true" type="tns:ResponseMessageOfPCCustomerCommunicationInfoISE_P3Nmm" />
+</xs:schema>

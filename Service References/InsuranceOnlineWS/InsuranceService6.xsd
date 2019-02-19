@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.VDFInsuranceWS" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.VDFInsuranceWS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PreviousPolicyRequest">
+    <xs:sequence>
+      <xs:element name="chassisField" nillable="true" type="xs:string" />
+      <xs:element name="customerTypeField" nillable="true" type="xs:string" />
+      <xs:element name="licenplate1Field" nillable="true" type="xs:string" />
+      <xs:element name="licenplate2Field" nillable="true" type="xs:string" />
+      <xs:element name="licenplate3Field" nillable="true" type="xs:string" />
+      <xs:element name="productTypeField" nillable="true" type="xs:string" />
+      <xs:element name="tCKNField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PreviousPolicyRequest" nillable="true" type="tns:PreviousPolicyRequest" />
+  <xs:complexType name="PreviousPolicyResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResultBase">
+        <xs:sequence>
+          <xs:element name="acentaKoduField" nillable="true" type="xs:string" />
+          <xs:element name="adField" nillable="true" type="xs:string" />
+          <xs:element name="baslangicTarihiField" nillable="true" type="xs:string" />
+          <xs:element name="bitisTarihiField" nillable="true" type="xs:string" />
+          <xs:element name="kimlikNoField" nillable="true" type="xs:string" />
+          <xs:element name="markodField" nillable="true" type="xs:string" />
+          <xs:element name="modelField" nillable="true" type="xs:string" />
+          <xs:element name="motorNoField" nillable="true" type="xs:string" />
+          <xs:element name="ozelTuzelField" nillable="true" type="xs:string" />
+          <xs:element name="plakaField" nillable="true" type="xs:string" />
+          <xs:element name="policeNoField" nillable="true" type="xs:string" />
+          <xs:element name="productTypeField" nillable="true" type="xs:string" />
+          <xs:element name="registirationDateField" nillable="true" type="xs:dateTime" />
+          <xs:element name="sasiNoField" nillable="true" type="xs:string" />
+          <xs:element name="sigortaSirketKoduField" nillable="true" type="xs:string" />
+          <xs:element name="soyadField" nillable="true" type="xs:string" />
+          <xs:element name="taliAcentaKoduField" nillable="true" type="xs:string" />
+          <xs:element name="tanzimYiliField" nillable="true" type="xs:string" />
+          <xs:element name="tipKodField" nillable="true" type="xs:string" />
+          <xs:element name="trafficDateField" nillable="true" type="xs:dateTime" />
+          <xs:element name="yeniNoField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PreviousPolicyResponse" nillable="true" type="tns:PreviousPolicyResponse" />
+  <xs:complexType name="ResultBase">
+    <xs:sequence>
+      <xs:element name="errorCodeField" type="xs:int" />
+      <xs:element name="errorMessageField" nillable="true" type="xs:string" />
+      <xs:element name="errorTypeField" type="tns:ErrorType" />
+      <xs:element name="returnCodeField" type="tns:ReturnCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultBase" nillable="true" type="tns:ResultBase" />
+  <xs:simpleType name="ErrorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="BusinessError" />
+      <xs:enumeration value="SystemError" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ErrorType" nillable="true" type="tns:ErrorType" />
+  <xs:simpleType name="ReturnCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Fail" />
+      <xs:enumeration value="Success" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReturnCode" nillable="true" type="tns:ReturnCode" />
+  <xs:complexType name="BKMGetTokenResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResultBase">
+        <xs:sequence>
+          <xs:element name="bKMErrorMessageField" nillable="true" type="xs:string" />
+          <xs:element name="bKMSuccessField" type="xs:boolean" />
+          <xs:element name="bKMUrlField" nillable="true" type="xs:string" />
+          <xs:element name="tokenIdField" nillable="true" type="xs:string" />
+          <xs:element name="transactionIdField" nillable="true" type="xs:string" />
+          <xs:element name="uniqueReferansField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BKMGetTokenResponse" nillable="true" type="tns:BKMGetTokenResponse" />
+</xs:schema>

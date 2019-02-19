@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Bentas" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Bentas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PCBentasPolPropDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AracMarkaModelTip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelYili" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotorNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Partaj" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plaka" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PoliceNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SasiNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrafikTescilSeriKod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Urun" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PCBentasPolPropDetail" nillable="true" type="tns:PCBentasPolPropDetail" />
+</xs:schema>

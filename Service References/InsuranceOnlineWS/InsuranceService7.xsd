@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Renewal" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Renewal" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CreateCustomerAndProducForNewSaletRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AsbisNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BrandCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChassisNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EngineNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasInsurance" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasTraffic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdentityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelYear" type="xs:int" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationOrderNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationSerialNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateCustomerAndProducForNewSaletRequest" nillable="true" type="tns:CreateCustomerAndProducForNewSaletRequest" />
+  <xs:complexType name="CreateCustomerAndProductForNewSaleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerWantsCall" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InsuranceFirmList" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="InsurancePolicyStartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuranceProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="InsuranceResponseType" type="xs:int" />
+      <xs:element minOccurs="0" name="InsuranceResponseTypeExplanation" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TrafficFirmList" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="TrafficPolicyStartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrafficProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="TrafficResponseType" type="xs:int" />
+      <xs:element minOccurs="0" name="TrafficResponseTypeExplanation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateCustomerAndProductForNewSaleResponse" nillable="true" type="tns:CreateCustomerAndProductForNewSaleResponse" />
+  <xs:complexType name="MobileRenewalParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccupationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccupationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PermittedMarketing" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PhoneContent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegSerialNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SeatingCapacity" type="xs:int" />
+      <xs:element minOccurs="0" name="TownId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TownName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsageTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsageTypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MobileRenewalParameters" nillable="true" type="tns:MobileRenewalParameters" />
+</xs:schema>

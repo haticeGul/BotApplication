@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.SecurityNetVdfMobileServiceWS" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.SecurityNetVdfMobileServiceWS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:simpleType name="AuthenticationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="I" />
+      <xs:enumeration value="C" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AuthenticationType" nillable="true" type="tns:AuthenticationType" />
+  <xs:complexType name="ResponseMessageOfPCVdfMobileWSUser">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element name="messageField" nillable="true" type="tns:PCVdfMobileWSUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfPCVdfMobileWSUser" nillable="true" type="tns:ResponseMessageOfPCVdfMobileWSUser" />
+  <xs:complexType name="ResponseMessage">
+    <xs:sequence>
+      <xs:element name="errorCodeField" type="xs:int" />
+      <xs:element name="errorMessageField" nillable="true" type="xs:string" />
+      <xs:element name="errorTypeField" type="tns:ResponseErrorType" />
+      <xs:element name="returnCodeField" type="tns:RetCode" />
+      <xs:element name="warningMessageField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseMessage" nillable="true" type="tns:ResponseMessage" />
+  <xs:simpleType name="ResponseErrorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoError" />
+      <xs:enumeration value="System" />
+      <xs:enumeration value="Business" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResponseErrorType" nillable="true" type="tns:ResponseErrorType" />
+  <xs:simpleType name="RetCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Fail" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="WarningDuplicateRecord" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RetCode" nillable="true" type="tns:RetCode" />
+  <xs:complexType name="PCVdfMobileWSUser">
+    <xs:sequence>
+      <xs:element name="authenticationTypeField" nillable="true" type="xs:string" />
+      <xs:element name="birthDateField" nillable="true" type="xs:string" />
+      <xs:element name="customerLastNameField" nillable="true" type="xs:string" />
+      <xs:element name="customerNameField" nillable="true" type="xs:string" />
+      <xs:element name="customerNumberField" type="xs:int" />
+      <xs:element name="isAuthenticatedField" type="xs:boolean" />
+      <xs:element name="isAuthorizedField" type="xs:boolean" />
+      <xs:element name="loginTimeField" type="xs:dateTime" />
+      <xs:element name="messageField" nillable="true" type="xs:string" />
+      <xs:element name="pINCodeField" nillable="true" type="xs:string" />
+      <xs:element name="searchCreditNumberField" nillable="true" type="xs:string" />
+      <xs:element name="tCIdentityNumberField" nillable="true" type="xs:string" />
+      <xs:element name="taxOfficeNumberField" nillable="true" type="xs:string" />
+      <xs:element name="tokenField" nillable="true" type="xs:string" />
+      <xs:element name="userMobilePhoneNumberField" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="userMobilePhoneNumberListField" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PCVdfMobileWSUser" nillable="true" type="tns:PCVdfMobileWSUser" />
+  <xs:complexType name="ResponseMessageOfString">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element name="messageField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfString" nillable="true" type="tns:ResponseMessageOfString" />
+  <xs:complexType name="ResponseMessageOfPCUserInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element name="messageField" nillable="true" type="tns:PCUserInformation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfPCUserInformation" nillable="true" type="tns:ResponseMessageOfPCUserInformation" />
+  <xs:complexType name="PCUserInformation">
+    <xs:sequence>
+      <xs:element name="modifiedDateField" type="xs:dateTime" />
+      <xs:element name="pinCodeField" nillable="true" type="xs:string" />
+      <xs:element name="sendSmsDateField" type="xs:dateTime" />
+      <xs:element name="serverDateField" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PCUserInformation" nillable="true" type="tns:PCUserInformation" />
+  <xs:complexType name="ResponseMessageOfInt32">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseMessage">
+        <xs:sequence>
+          <xs:element name="messageField" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseMessageOfInt32" nillable="true" type="tns:ResponseMessageOfInt32" />
+</xs:schema>

@@ -1,0 +1,2620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="InsuranceService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="wsHttpEP_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Offer" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.Customer" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Customer" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Operation" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Renewal" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Vehicle" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Enumerations" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.VDFInsuranceWS" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Support" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Security" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.TaskManagement" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Bentas" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.SecurityNetVdfMobileServiceWS" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd22" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+      <xsd:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Collection" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IInsuranceService_GetCampaingCustomerInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCampaingCustomerInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCampaingCustomerInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCampaingCustomerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCampaingDefinition_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCampaingDefinition" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCampaingDefinition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCampaingDefinitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_HasCustomerPolicyProductLastFiveDay_InputMessage">
+    <wsdl:part name="parameters" element="tns:HasCustomerPolicyProductLastFiveDay" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_HasCustomerPolicyProductLastFiveDay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HasCustomerPolicyProductLastFiveDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_ControlDoId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ControlDoId" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_ControlDoId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ControlDoIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SendPolicyEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPolicyEmail" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SendPolicyEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPolicyEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SendPolicyEmailWithPolicyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendPolicyEmailWithPolicyId" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SendPolicyEmailWithPolicyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendPolicyEmailWithPolicyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddInsuranceCommunication_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddInsuranceCommunication" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddInsuranceCommunication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddInsuranceCommunicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PublishException_InputMessage">
+    <wsdl:part name="parameters" element="tns:PublishException" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PublishException_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PublishExceptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_WriteExceptionMessageToEventLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteExceptionMessageToEventLog" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_WriteExceptionMessageToEventLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteExceptionMessageToEventLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetOnlineInsuranceFirmList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineInsuranceFirmList" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetOnlineInsuranceFirmList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineInsuranceFirmListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CheckInsuranceFirmOfferSelfishness_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckInsuranceFirmOfferSelfishness" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CheckInsuranceFirmOfferSelfishness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckInsuranceFirmOfferSelfishnessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetParameterGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParameterGroup" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetParameterGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParameterGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetSubParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubParameters" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetSubParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetUsageTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsageTypes" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetUsageTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsageTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetAreaCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreaCodes" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetAreaCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreaCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddCustomerActivityLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerActivityLog" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddCustomerActivityLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerActivityLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCityNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityNames" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCityNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetTownNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTownNames" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetTownNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTownNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_LogMobileCalls_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogMobileCalls" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_LogMobileCalls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogMobileCallsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_HealthCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:HealthCheck" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_HealthCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HealthCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetParameterByParameterCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParameterByParameterCode" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetParameterByParameterCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParameterByParameterCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetSubParameter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubParameter" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetSubParameter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_ConvertStringToPdf_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertStringToPdf" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_ConvertStringToPdf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertStringToPdfResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerNetAddressByAddressId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerNetAddressByAddressId" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerNetAddressByAddressId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerNetAddressByAddressIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerProduct" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerAddressIdsRelatedWithOffer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerAddressIdsRelatedWithOffer" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerAddressIdsRelatedWithOffer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerAddressIdsRelatedWithOfferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddCustomerAddressToCustomerNet_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerAddressToCustomerNet" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddCustomerAddressToCustomerNet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerAddressToCustomerNetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateCustomerNetAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerNetAddress" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateCustomerNetAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerNetAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SearchAllCommunicationWithCusId_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchAllCommunicationWithCusId" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SearchAllCommunicationWithCusId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchAllCommunicationWithCusIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerWithCustomerNetId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerWithCustomerNetId" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerWithCustomerNetId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerWithCustomerNetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetAddresses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddresses" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetAddresses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddress" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddInsuranceAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddInsuranceAddress" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddInsuranceAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddInsuranceAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateInsuranceAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInsuranceAddress" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateInsuranceAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInsuranceAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddOrUpdateAddressToAllSources_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateAddressToAllSources" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddOrUpdateAddressToAllSources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateAddressToAllSourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddPermittedMarketing_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPermittedMarketing" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddPermittedMarketing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPermittedMarketingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddPermittedMarketingWithType_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPermittedMarketingWithType" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddPermittedMarketingWithType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPermittedMarketingWithTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPermittedMarketingApprovalText_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermittedMarketingApprovalText" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPermittedMarketingApprovalText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermittedMarketingApprovalTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPermittedMarketing_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermittedMarketing" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPermittedMarketing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermittedMarketingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CheckCustomerAuthorizationForCreatePolicy_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCustomerAuthorizationForCreatePolicy" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CheckCustomerAuthorizationForCreatePolicy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCustomerAuthorizationForCreatePolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerAddressIdsRelatedCustomerNetCusId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerAddressIdsRelatedCustomerNetCusId" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerAddressIdsRelatedCustomerNetCusId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerAddressIdsRelatedCustomerNetCusIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerNetCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerNetCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerNetCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerNetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CheckKVKKCustomerApprove_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckKVKKCustomerApprove" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CheckKVKKCustomerApprove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckKVKKCustomerApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_InsertKVKKCustomerApprove_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertKVKKCustomerApprove" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_InsertKVKKCustomerApprove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertKVKKCustomerApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CreateCustomerAndProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomerAndProducts" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CreateCustomerAndProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomerAndProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetBentasCustomerVehicleInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBentasCustomerVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetBentasCustomerVehicleInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBentasCustomerVehicleInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetInsuranceCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInsuranceCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetInsuranceCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInsuranceCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetVdfCustomerAddresses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVdfCustomerAddresses" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetVdfCustomerAddresses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVdfCustomerAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCommunicationByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommunicationByType" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCommunicationByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommunicationByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetMatchedVehicleInfoWithPolicyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMatchedVehicleInfoWithPolicyId" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetMatchedVehicleInfoWithPolicyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMatchedVehicleInfoWithPolicyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetOnlineOfferList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineOfferList" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetOnlineOfferList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineOfferListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CalculateOfferAlternatives_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateOfferAlternatives" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CalculateOfferAlternatives_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateOfferAlternativesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CalculateTrafficOfferAlternatives_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateTrafficOfferAlternatives" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CalculateTrafficOfferAlternatives_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateTrafficOfferAlternativesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SaveProductOfferWithOfferId_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductOfferWithOfferId" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SaveProductOfferWithOfferId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductOfferWithOfferIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PrintOffer_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrintOffer" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PrintOffer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintOfferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SelectPaymentTypeForOffer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectPaymentTypeForOffer" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SelectPaymentTypeForOffer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectPaymentTypeForOfferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetOfferInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfferInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetOfferInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfferInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetRenewalParametersForMobile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRenewalParametersForMobile" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetRenewalParametersForMobile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRenewalParametersForMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPolicySummaryMobile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicySummaryMobile" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPolicySummaryMobile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicySummaryMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCollectionInformationFormWithOfferId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionInformationFormWithOfferId" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCollectionInformationFormWithOfferId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionInformationFormWithOfferIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPreviousPolicyReponse_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPreviousPolicyReponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPreviousPolicyReponse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPreviousPolicyReponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetVehicleModelsByBrandCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleModelsByBrandCode" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetVehicleModelsByBrandCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleModelsByBrandCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetVehicleBrand_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleBrand" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetVehicleBrand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleBrandResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetVehicleSubModelByBrandCodeAndYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleSubModelByBrandCodeAndYear" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetVehicleSubModelByBrandCodeAndYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleSubModelByBrandCodeAndYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SetCustomerAsWantsCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetCustomerAsWantsCall" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SetCustomerAsWantsCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetCustomerAsWantsCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetVehicleWithBrandAndModelCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleWithBrandAndModelCode" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetVehicleWithBrandAndModelCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleWithBrandAndModelCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CalculateInsuranceOffers_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateInsuranceOffers" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CalculateInsuranceOffers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateInsuranceOffersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CalculateTrafficOffers_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateTrafficOffers" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CalculateTrafficOffers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateTrafficOffersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCoverPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoverPage" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCoverPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoverPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SendOfferEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendOfferEmail" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SendOfferEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendOfferEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SendOTPSms_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendOTPSms" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SendOTPSms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendOTPSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_ControlOTPSms_InputMessage">
+    <wsdl:part name="parameters" element="tns:ControlOTPSms" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_ControlOTPSms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ControlOTPSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_ValidateGuestToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateGuestToken" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_ValidateGuestToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateGuestTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SaveCaptchaInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCaptchaInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SaveCaptchaInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCaptchaInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CheckCaptchaInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCaptchaInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CheckCaptchaInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCaptchaInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AutoLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutoLogin" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AutoLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutoLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPinCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPinCode" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPinCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPinCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateCustomerPermittedMarketing_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerPermittedMarketing" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateCustomerPermittedMarketing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerPermittedMarketingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetSuperTokenForTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuperTokenForTest" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetSuperTokenForTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuperTokenForTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTask" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddTaskForWeb_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTaskForWeb" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddTaskForWeb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTaskForWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddTaskFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTaskFile" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddTaskFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTaskFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerTasks" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerTasksByCustomerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerTasksByCustomerId" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerTasksByCustomerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerTasksByCustomerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCategoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCategoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetSubCategoryForWeb_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubCategoryForWeb" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetSubCategoryForWeb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubCategoryForWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCategoryListMobile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryListMobile" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCategoryListMobile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryListMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_DeleteTaskFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTaskFile" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_DeleteTaskFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTaskFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetTaskFileEntityObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskFileEntityObject" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetTaskFileEntityObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskFileEntityObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTask" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CancelTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelTask" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CancelTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddInsuranceCustomerOperationSingleCallResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddInsuranceCustomerOperationSingleCallResult" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddInsuranceCustomerOperationSingleCallResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddInsuranceCustomerOperationSingleCallResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetTaskFileCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskFileCount" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetTaskFileCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskFileCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPolicyVehicleInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicyVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPolicyVehicleInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicyVehicleInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetActivePolicyList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivePolicyList" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetActivePolicyList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivePolicyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPolicyCollectionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicyCollectionList" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPolicyCollectionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicyCollectionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetNotificationList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationList" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetNotificationList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetBentasPolPropDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBentasPolPropDetail" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetBentasPolPropDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBentasPolPropDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetBentasPolicyPropertyList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBentasPolicyPropertyList" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetBentasPolicyPropertyList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBentasPolicyPropertyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PrintPolicyForBentas_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrintPolicyForBentas" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PrintPolicyForBentas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintPolicyForBentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PrintPolicyWithOfferId_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrintPolicyWithOfferId" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PrintPolicyWithOfferId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintPolicyWithOfferIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PrintOfferInformationForm_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrintOfferInformationForm" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PrintOfferInformationForm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintOfferInformationFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PrintOfferInformationFormPdf_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrintOfferInformationFormPdf" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PrintOfferInformationFormPdf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintOfferInformationFormPdfResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PrintOfferInformationFormText_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrintOfferInformationFormText" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PrintOfferInformationFormText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintOfferInformationFormTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PrintCreditCardContractForm_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrintCreditCardContractForm" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_PrintCreditCardContractForm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintCreditCardContractFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SetSelectedOnlinePolicy_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSelectedOnlinePolicy" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SetSelectedOnlinePolicy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSelectedOnlinePolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SetSelectedManualPolicy_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSelectedManualPolicy" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SetSelectedManualPolicy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSelectedManualPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CreatePolicyForMoneyTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePolicyForMoneyTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CreatePolicyForMoneyTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePolicyForMoneyTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CreatePolicyWithCreditCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePolicyWithCreditCard" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CreatePolicyWithCreditCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePolicyWithCreditCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CreatePolicyWitCreditCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePolicyWitCreditCard" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CreatePolicyWitCreditCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePolicyWitCreditCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPolicyRenewalCountMobile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicyRenewalCountMobile" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetPolicyRenewalCountMobile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicyRenewalCountMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerVehicle" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateCustomerProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerProduct" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateCustomerProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateCustomerVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerVehicle" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateCustomerVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerProductInfoByCustomerProductId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerProductInfoByCustomerProductId" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCustomerProductInfoByCustomerProductId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerProductInfoByCustomerProductIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SaveCustomerAddresses_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCustomerAddresses" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SaveCustomerAddresses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCustomerAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetBKMToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBKMToken" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetBKMToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBKMTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetBentasPolicy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBentasPolicy" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetBentasPolicy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBentasPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CreatePINCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePINCode" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_CreatePINCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePINCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetUserLoginInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLoginInformation" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetUserLoginInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLoginInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_EncryptPhoneNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:EncryptPhoneNumber" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_EncryptPhoneNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EncryptPhoneNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_DecryptPhoneNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:DecryptPhoneNumber" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_DecryptPhoneNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DecryptPhoneNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SearchAllCommunication_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchAllCommunication" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SearchAllCommunication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchAllCommunicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SendEuroMessageEmailWithAttach_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendEuroMessageEmailWithAttach" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SendEuroMessageEmailWithAttach_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendEuroMessageEmailWithAttachResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddCustomerCommunication_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerCommunication" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddCustomerCommunication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerCommunicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateCustomerNetCommunication_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerNetCommunication" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateCustomerNetCommunication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerNetCommunicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateCustomerVehicleWithCustomerNetId_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerVehicleWithCustomerNetId" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateCustomerVehicleWithCustomerNetId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerVehicleWithCustomerNetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetMessageActionLogDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageActionLogDetail" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetMessageActionLogDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageActionLogDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SearchCommunicationInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCommunicationInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_SearchCommunicationInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCommunicationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCommunicationById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommunicationById" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_GetCommunicationById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommunicationByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_InsertCommunication_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCommunication" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_InsertCommunication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCommunicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateCommunication_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCommunication" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_UpdateCommunication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCommunicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddCampaingCustomerInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCampaingCustomerInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInsuranceService_AddCampaingCustomerInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCampaingCustomerInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IInsuranceService">
+    <wsdl:operation name="GetCampaingCustomerInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCampaingCustomerInfo" message="tns:IInsuranceService_GetCampaingCustomerInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCampaingCustomerInfoResponse" message="tns:IInsuranceService_GetCampaingCustomerInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampaingDefinition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCampaingDefinition" message="tns:IInsuranceService_GetCampaingDefinition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCampaingDefinitionResponse" message="tns:IInsuranceService_GetCampaingDefinition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HasCustomerPolicyProductLastFiveDay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/HasCustomerPolicyProductLastFiveDay" message="tns:IInsuranceService_HasCustomerPolicyProductLastFiveDay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/HasCustomerPolicyProductLastFiveDayResponse" message="tns:IInsuranceService_HasCustomerPolicyProductLastFiveDay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ControlDoId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/ControlDoId" message="tns:IInsuranceService_ControlDoId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/ControlDoIdResponse" message="tns:IInsuranceService_ControlDoId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPolicyEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SendPolicyEmail" message="tns:IInsuranceService_SendPolicyEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SendPolicyEmailResponse" message="tns:IInsuranceService_SendPolicyEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPolicyEmailWithPolicyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SendPolicyEmailWithPolicyId" message="tns:IInsuranceService_SendPolicyEmailWithPolicyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SendPolicyEmailWithPolicyIdResponse" message="tns:IInsuranceService_SendPolicyEmailWithPolicyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddInsuranceCommunication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/AddInsuranceCommunication" message="tns:IInsuranceService_AddInsuranceCommunication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/AddInsuranceCommunicationResponse" message="tns:IInsuranceService_AddInsuranceCommunication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishException">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/PublishException" message="tns:IInsuranceService_PublishException_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/PublishExceptionResponse" message="tns:IInsuranceService_PublishException_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteExceptionMessageToEventLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/WriteExceptionMessageToEventLog" message="tns:IInsuranceService_WriteExceptionMessageToEventLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/WriteExceptionMessageToEventLogResponse" message="tns:IInsuranceService_WriteExceptionMessageToEventLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineInsuranceFirmList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetOnlineInsuranceFirmList" message="tns:IInsuranceService_GetOnlineInsuranceFirmList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetOnlineInsuranceFirmListResponse" message="tns:IInsuranceService_GetOnlineInsuranceFirmList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInsuranceFirmOfferSelfishness">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/CheckInsuranceFirmOfferSelfishness" message="tns:IInsuranceService_CheckInsuranceFirmOfferSelfishness_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/CheckInsuranceFirmOfferSelfishnessResponse" message="tns:IInsuranceService_CheckInsuranceFirmOfferSelfishness_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetParameterGroup" message="tns:IInsuranceService_GetParameterGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetParameterGroupResponse" message="tns:IInsuranceService_GetParameterGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetSubParameters" message="tns:IInsuranceService_GetSubParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetSubParametersResponse" message="tns:IInsuranceService_GetSubParameters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsageTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetUsageTypes" message="tns:IInsuranceService_GetUsageTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetUsageTypesResponse" message="tns:IInsuranceService_GetUsageTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaCodes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetAreaCodes" message="tns:IInsuranceService_GetAreaCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetAreaCodesResponse" message="tns:IInsuranceService_GetAreaCodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerActivityLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/AddCustomerActivityLog" message="tns:IInsuranceService_AddCustomerActivityLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/AddCustomerActivityLogResponse" message="tns:IInsuranceService_AddCustomerActivityLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCityNames" message="tns:IInsuranceService_GetCityNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCityNamesResponse" message="tns:IInsuranceService_GetCityNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTownNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetTownNames" message="tns:IInsuranceService_GetTownNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetTownNamesResponse" message="tns:IInsuranceService_GetTownNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogMobileCalls">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/LogMobileCalls" message="tns:IInsuranceService_LogMobileCalls_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/LogMobileCallsResponse" message="tns:IInsuranceService_LogMobileCalls_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HealthCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/HealthCheck" message="tns:IInsuranceService_HealthCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/HealthCheckResponse" message="tns:IInsuranceService_HealthCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterByParameterCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetParameterByParameterCode" message="tns:IInsuranceService_GetParameterByParameterCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetParameterByParameterCodeResponse" message="tns:IInsuranceService_GetParameterByParameterCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubParameter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetSubParameter" message="tns:IInsuranceService_GetSubParameter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetSubParameterResponse" message="tns:IInsuranceService_GetSubParameter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertStringToPdf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/ConvertStringToPdf" message="tns:IInsuranceService_ConvertStringToPdf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/ConvertStringToPdfResponse" message="tns:IInsuranceService_ConvertStringToPdf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerNetAddressByAddressId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerNetAddressByAddressId" message="tns:IInsuranceService_GetCustomerNetAddressByAddressId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerNetAddressByAddressIdResponse" message="tns:IInsuranceService_GetCustomerNetAddressByAddressId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerProduct" message="tns:IInsuranceService_GetCustomerProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerProductResponse" message="tns:IInsuranceService_GetCustomerProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerAddressIdsRelatedWithOffer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerAddressIdsRelatedWithOffer" message="tns:IInsuranceService_GetCustomerAddressIdsRelatedWithOffer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerAddressIdsRelatedWithOfferResponse" message="tns:IInsuranceService_GetCustomerAddressIdsRelatedWithOffer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerAddressToCustomerNet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/AddCustomerAddressToCustomerNet" message="tns:IInsuranceService_AddCustomerAddressToCustomerNet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/AddCustomerAddressToCustomerNetResponse" message="tns:IInsuranceService_AddCustomerAddressToCustomerNet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerNetAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/UpdateCustomerNetAddress" message="tns:IInsuranceService_UpdateCustomerNetAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/UpdateCustomerNetAddressResponse" message="tns:IInsuranceService_UpdateCustomerNetAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchAllCommunicationWithCusId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SearchAllCommunicationWithCusId" message="tns:IInsuranceService_SearchAllCommunicationWithCusId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SearchAllCommunicationWithCusIdResponse" message="tns:IInsuranceService_SearchAllCommunicationWithCusId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerWithCustomerNetId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerWithCustomerNetId" message="tns:IInsuranceService_GetCustomerWithCustomerNetId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerWithCustomerNetIdResponse" message="tns:IInsuranceService_GetCustomerWithCustomerNetId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddresses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetAddresses" message="tns:IInsuranceService_GetAddresses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetAddressesResponse" message="tns:IInsuranceService_GetAddresses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetAddress" message="tns:IInsuranceService_GetAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetAddressResponse" message="tns:IInsuranceService_GetAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddInsuranceAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/AddInsuranceAddress" message="tns:IInsuranceService_AddInsuranceAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/AddInsuranceAddressResponse" message="tns:IInsuranceService_AddInsuranceAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInsuranceAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/UpdateInsuranceAddress" message="tns:IInsuranceService_UpdateInsuranceAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/UpdateInsuranceAddressResponse" message="tns:IInsuranceService_UpdateInsuranceAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateAddressToAllSources">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/AddOrUpdateAddressToAllSources" message="tns:IInsuranceService_AddOrUpdateAddressToAllSources_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/AddOrUpdateAddressToAllSourcesResponse" message="tns:IInsuranceService_AddOrUpdateAddressToAllSources_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPermittedMarketing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/AddPermittedMarketing" message="tns:IInsuranceService_AddPermittedMarketing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/AddPermittedMarketingResponse" message="tns:IInsuranceService_AddPermittedMarketing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPermittedMarketingWithType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/AddPermittedMarketingWithType" message="tns:IInsuranceService_AddPermittedMarketingWithType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/AddPermittedMarketingWithTypeResponse" message="tns:IInsuranceService_AddPermittedMarketingWithType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPermittedMarketingApprovalText">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetPermittedMarketingApprovalText" message="tns:IInsuranceService_GetPermittedMarketingApprovalText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetPermittedMarketingApprovalTextResponse" message="tns:IInsuranceService_GetPermittedMarketingApprovalText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPermittedMarketing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetPermittedMarketing" message="tns:IInsuranceService_GetPermittedMarketing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetPermittedMarketingResponse" message="tns:IInsuranceService_GetPermittedMarketing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCustomerAuthorizationForCreatePolicy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/CheckCustomerAuthorizationForCreatePolicy" message="tns:IInsuranceService_CheckCustomerAuthorizationForCreatePolicy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/CheckCustomerAuthorizationForCreatePolicyResponse" message="tns:IInsuranceService_CheckCustomerAuthorizationForCreatePolicy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerAddressIdsRelatedCustomerNetCusId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerAddressIdsRelatedCustomerNetCusId" message="tns:IInsuranceService_GetCustomerAddressIdsRelatedCustomerNetCusId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerAddressIdsRelatedCustomerNetCusIdResponse" message="tns:IInsuranceService_GetCustomerAddressIdsRelatedCustomerNetCusId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerNetCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerNetCustomer" message="tns:IInsuranceService_GetCustomerNetCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerNetCustomerResponse" message="tns:IInsuranceService_GetCustomerNetCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckKVKKCustomerApprove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/CheckKVKKCustomerApprove" message="tns:IInsuranceService_CheckKVKKCustomerApprove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/CheckKVKKCustomerApproveResponse" message="tns:IInsuranceService_CheckKVKKCustomerApprove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertKVKKCustomerApprove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/InsertKVKKCustomerApprove" message="tns:IInsuranceService_InsertKVKKCustomerApprove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/InsertKVKKCustomerApproveResponse" message="tns:IInsuranceService_InsertKVKKCustomerApprove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomerAndProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/CreateCustomerAndProducts" message="tns:IInsuranceService_CreateCustomerAndProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/CreateCustomerAndProductsResponse" message="tns:IInsuranceService_CreateCustomerAndProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBentasCustomerVehicleInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetBentasCustomerVehicleInfo" message="tns:IInsuranceService_GetBentasCustomerVehicleInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetBentasCustomerVehicleInfoResponse" message="tns:IInsuranceService_GetBentasCustomerVehicleInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInsuranceCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetInsuranceCustomer" message="tns:IInsuranceService_GetInsuranceCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetInsuranceCustomerResponse" message="tns:IInsuranceService_GetInsuranceCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVdfCustomerAddresses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetVdfCustomerAddresses" message="tns:IInsuranceService_GetVdfCustomerAddresses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetVdfCustomerAddressesResponse" message="tns:IInsuranceService_GetVdfCustomerAddresses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommunicationByType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCommunicationByType" message="tns:IInsuranceService_GetCommunicationByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCommunicationByTypeResponse" message="tns:IInsuranceService_GetCommunicationByType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchedVehicleInfoWithPolicyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetMatchedVehicleInfoWithPolicyId" message="tns:IInsuranceService_GetMatchedVehicleInfoWithPolicyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetMatchedVehicleInfoWithPolicyIdResponse" message="tns:IInsuranceService_GetMatchedVehicleInfoWithPolicyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineOfferList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetOnlineOfferList" message="tns:IInsuranceService_GetOnlineOfferList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetOnlineOfferListResponse" message="tns:IInsuranceService_GetOnlineOfferList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateOfferAlternatives">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/CalculateOfferAlternatives" message="tns:IInsuranceService_CalculateOfferAlternatives_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/CalculateOfferAlternativesResponse" message="tns:IInsuranceService_CalculateOfferAlternatives_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTrafficOfferAlternatives">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/CalculateTrafficOfferAlternatives" message="tns:IInsuranceService_CalculateTrafficOfferAlternatives_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/CalculateTrafficOfferAlternativesResponse" message="tns:IInsuranceService_CalculateTrafficOfferAlternatives_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductOfferWithOfferId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SaveProductOfferWithOfferId" message="tns:IInsuranceService_SaveProductOfferWithOfferId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SaveProductOfferWithOfferIdResponse" message="tns:IInsuranceService_SaveProductOfferWithOfferId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintOffer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/PrintOffer" message="tns:IInsuranceService_PrintOffer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/PrintOfferResponse" message="tns:IInsuranceService_PrintOffer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectPaymentTypeForOffer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SelectPaymentTypeForOffer" message="tns:IInsuranceService_SelectPaymentTypeForOffer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SelectPaymentTypeForOfferResponse" message="tns:IInsuranceService_SelectPaymentTypeForOffer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfferInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetOfferInfo" message="tns:IInsuranceService_GetOfferInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetOfferInfoResponse" message="tns:IInsuranceService_GetOfferInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRenewalParametersForMobile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetRenewalParametersForMobile" message="tns:IInsuranceService_GetRenewalParametersForMobile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetRenewalParametersForMobileResponse" message="tns:IInsuranceService_GetRenewalParametersForMobile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicySummaryMobile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetPolicySummaryMobile" message="tns:IInsuranceService_GetPolicySummaryMobile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetPolicySummaryMobileResponse" message="tns:IInsuranceService_GetPolicySummaryMobile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionInformationFormWithOfferId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCollectionInformationFormWithOfferId" message="tns:IInsuranceService_GetCollectionInformationFormWithOfferId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCollectionInformationFormWithOfferIdResponse" message="tns:IInsuranceService_GetCollectionInformationFormWithOfferId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreviousPolicyReponse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetPreviousPolicyReponse" message="tns:IInsuranceService_GetPreviousPolicyReponse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetPreviousPolicyReponseResponse" message="tns:IInsuranceService_GetPreviousPolicyReponse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleModelsByBrandCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetVehicleModelsByBrandCode" message="tns:IInsuranceService_GetVehicleModelsByBrandCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetVehicleModelsByBrandCodeResponse" message="tns:IInsuranceService_GetVehicleModelsByBrandCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleBrand">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetVehicleBrand" message="tns:IInsuranceService_GetVehicleBrand_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetVehicleBrandResponse" message="tns:IInsuranceService_GetVehicleBrand_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleSubModelByBrandCodeAndYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetVehicleSubModelByBrandCodeAndYear" message="tns:IInsuranceService_GetVehicleSubModelByBrandCodeAndYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetVehicleSubModelByBrandCodeAndYearResponse" message="tns:IInsuranceService_GetVehicleSubModelByBrandCodeAndYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerAsWantsCall">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SetCustomerAsWantsCall" message="tns:IInsuranceService_SetCustomerAsWantsCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SetCustomerAsWantsCallResponse" message="tns:IInsuranceService_SetCustomerAsWantsCall_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleWithBrandAndModelCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetVehicleWithBrandAndModelCode" message="tns:IInsuranceService_GetVehicleWithBrandAndModelCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetVehicleWithBrandAndModelCodeResponse" message="tns:IInsuranceService_GetVehicleWithBrandAndModelCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInsuranceOffers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/CalculateInsuranceOffers" message="tns:IInsuranceService_CalculateInsuranceOffers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/CalculateInsuranceOffersResponse" message="tns:IInsuranceService_CalculateInsuranceOffers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTrafficOffers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/CalculateTrafficOffers" message="tns:IInsuranceService_CalculateTrafficOffers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/CalculateTrafficOffersResponse" message="tns:IInsuranceService_CalculateTrafficOffers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoverPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCoverPage" message="tns:IInsuranceService_GetCoverPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCoverPageResponse" message="tns:IInsuranceService_GetCoverPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendOfferEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SendOfferEmail" message="tns:IInsuranceService_SendOfferEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SendOfferEmailResponse" message="tns:IInsuranceService_SendOfferEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendOTPSms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SendOTPSms" message="tns:IInsuranceService_SendOTPSms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SendOTPSmsResponse" message="tns:IInsuranceService_SendOTPSms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ControlOTPSms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/ControlOTPSms" message="tns:IInsuranceService_ControlOTPSms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/ControlOTPSmsResponse" message="tns:IInsuranceService_ControlOTPSms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGuestToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/ValidateGuestToken" message="tns:IInsuranceService_ValidateGuestToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/ValidateGuestTokenResponse" message="tns:IInsuranceService_ValidateGuestToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCaptchaInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SaveCaptchaInfo" message="tns:IInsuranceService_SaveCaptchaInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SaveCaptchaInfoResponse" message="tns:IInsuranceService_SaveCaptchaInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCaptchaInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/CheckCaptchaInfo" message="tns:IInsuranceService_CheckCaptchaInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/CheckCaptchaInfoResponse" message="tns:IInsuranceService_CheckCaptchaInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutoLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/AutoLogin" message="tns:IInsuranceService_AutoLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/AutoLoginResponse" message="tns:IInsuranceService_AutoLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPinCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetPinCode" message="tns:IInsuranceService_GetPinCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetPinCodeResponse" message="tns:IInsuranceService_GetPinCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerPermittedMarketing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/UpdateCustomerPermittedMarketing" message="tns:IInsuranceService_UpdateCustomerPermittedMarketing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/UpdateCustomerPermittedMarketingResponse" message="tns:IInsuranceService_UpdateCustomerPermittedMarketing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuperTokenForTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetSuperTokenForTest" message="tns:IInsuranceService_GetSuperTokenForTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetSuperTokenForTestResponse" message="tns:IInsuranceService_GetSuperTokenForTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/AddTask" message="tns:IInsuranceService_AddTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/AddTaskResponse" message="tns:IInsuranceService_AddTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTaskForWeb">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/AddTaskForWeb" message="tns:IInsuranceService_AddTaskForWeb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/AddTaskForWebResponse" message="tns:IInsuranceService_AddTaskForWeb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTaskFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/AddTaskFile" message="tns:IInsuranceService_AddTaskFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/AddTaskFileResponse" message="tns:IInsuranceService_AddTaskFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerTasks" message="tns:IInsuranceService_GetCustomerTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerTasksResponse" message="tns:IInsuranceService_GetCustomerTasks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerTasksByCustomerId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerTasksByCustomerId" message="tns:IInsuranceService_GetCustomerTasksByCustomerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerTasksByCustomerIdResponse" message="tns:IInsuranceService_GetCustomerTasksByCustomerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCategoryList" message="tns:IInsuranceService_GetCategoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCategoryListResponse" message="tns:IInsuranceService_GetCategoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategoryForWeb">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetSubCategoryForWeb" message="tns:IInsuranceService_GetSubCategoryForWeb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetSubCategoryForWebResponse" message="tns:IInsuranceService_GetSubCategoryForWeb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryListMobile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCategoryListMobile" message="tns:IInsuranceService_GetCategoryListMobile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCategoryListMobileResponse" message="tns:IInsuranceService_GetCategoryListMobile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTaskFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/DeleteTaskFile" message="tns:IInsuranceService_DeleteTaskFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/DeleteTaskFileResponse" message="tns:IInsuranceService_DeleteTaskFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskFileEntityObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetTaskFileEntityObject" message="tns:IInsuranceService_GetTaskFileEntityObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetTaskFileEntityObjectResponse" message="tns:IInsuranceService_GetTaskFileEntityObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetTask" message="tns:IInsuranceService_GetTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetTaskResponse" message="tns:IInsuranceService_GetTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/CancelTask" message="tns:IInsuranceService_CancelTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/CancelTaskResponse" message="tns:IInsuranceService_CancelTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddInsuranceCustomerOperationSingleCallResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/AddInsuranceCustomerOperationSingleCallResult" message="tns:IInsuranceService_AddInsuranceCustomerOperationSingleCallResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/AddInsuranceCustomerOperationSingleCallResultResponse" message="tns:IInsuranceService_AddInsuranceCustomerOperationSingleCallResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskFileCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetTaskFileCount" message="tns:IInsuranceService_GetTaskFileCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetTaskFileCountResponse" message="tns:IInsuranceService_GetTaskFileCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicyVehicleInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetPolicyVehicleInfo" message="tns:IInsuranceService_GetPolicyVehicleInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetPolicyVehicleInfoResponse" message="tns:IInsuranceService_GetPolicyVehicleInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivePolicyList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetActivePolicyList" message="tns:IInsuranceService_GetActivePolicyList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetActivePolicyListResponse" message="tns:IInsuranceService_GetActivePolicyList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicyCollectionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetPolicyCollectionList" message="tns:IInsuranceService_GetPolicyCollectionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetPolicyCollectionListResponse" message="tns:IInsuranceService_GetPolicyCollectionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetNotificationList" message="tns:IInsuranceService_GetNotificationList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetNotificationListResponse" message="tns:IInsuranceService_GetNotificationList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBentasPolPropDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetBentasPolPropDetail" message="tns:IInsuranceService_GetBentasPolPropDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetBentasPolPropDetailResponse" message="tns:IInsuranceService_GetBentasPolPropDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBentasPolicyPropertyList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetBentasPolicyPropertyList" message="tns:IInsuranceService_GetBentasPolicyPropertyList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetBentasPolicyPropertyListResponse" message="tns:IInsuranceService_GetBentasPolicyPropertyList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintPolicyForBentas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/PrintPolicyForBentas" message="tns:IInsuranceService_PrintPolicyForBentas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/PrintPolicyForBentasResponse" message="tns:IInsuranceService_PrintPolicyForBentas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintPolicyWithOfferId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/PrintPolicyWithOfferId" message="tns:IInsuranceService_PrintPolicyWithOfferId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/PrintPolicyWithOfferIdResponse" message="tns:IInsuranceService_PrintPolicyWithOfferId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintOfferInformationForm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/PrintOfferInformationForm" message="tns:IInsuranceService_PrintOfferInformationForm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/PrintOfferInformationFormResponse" message="tns:IInsuranceService_PrintOfferInformationForm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintOfferInformationFormPdf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/PrintOfferInformationFormPdf" message="tns:IInsuranceService_PrintOfferInformationFormPdf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/PrintOfferInformationFormPdfResponse" message="tns:IInsuranceService_PrintOfferInformationFormPdf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintOfferInformationFormText">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/PrintOfferInformationFormText" message="tns:IInsuranceService_PrintOfferInformationFormText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/PrintOfferInformationFormTextResponse" message="tns:IInsuranceService_PrintOfferInformationFormText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintCreditCardContractForm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/PrintCreditCardContractForm" message="tns:IInsuranceService_PrintCreditCardContractForm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/PrintCreditCardContractFormResponse" message="tns:IInsuranceService_PrintCreditCardContractForm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSelectedOnlinePolicy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SetSelectedOnlinePolicy" message="tns:IInsuranceService_SetSelectedOnlinePolicy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SetSelectedOnlinePolicyResponse" message="tns:IInsuranceService_SetSelectedOnlinePolicy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSelectedManualPolicy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SetSelectedManualPolicy" message="tns:IInsuranceService_SetSelectedManualPolicy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SetSelectedManualPolicyResponse" message="tns:IInsuranceService_SetSelectedManualPolicy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePolicyForMoneyTransfer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/CreatePolicyForMoneyTransfer" message="tns:IInsuranceService_CreatePolicyForMoneyTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/CreatePolicyForMoneyTransferResponse" message="tns:IInsuranceService_CreatePolicyForMoneyTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePolicyWithCreditCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/CreatePolicyWithCreditCard" message="tns:IInsuranceService_CreatePolicyWithCreditCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/CreatePolicyWithCreditCardResponse" message="tns:IInsuranceService_CreatePolicyWithCreditCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePolicyWitCreditCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/CreatePolicyWitCreditCard" message="tns:IInsuranceService_CreatePolicyWitCreditCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/CreatePolicyWitCreditCardResponse" message="tns:IInsuranceService_CreatePolicyWitCreditCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicyRenewalCountMobile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetPolicyRenewalCountMobile" message="tns:IInsuranceService_GetPolicyRenewalCountMobile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetPolicyRenewalCountMobileResponse" message="tns:IInsuranceService_GetPolicyRenewalCountMobile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerVehicle" message="tns:IInsuranceService_GetCustomerVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerVehicleResponse" message="tns:IInsuranceService_GetCustomerVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/UpdateCustomerProduct" message="tns:IInsuranceService_UpdateCustomerProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/UpdateCustomerProductResponse" message="tns:IInsuranceService_UpdateCustomerProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/UpdateCustomerVehicle" message="tns:IInsuranceService_UpdateCustomerVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/UpdateCustomerVehicleResponse" message="tns:IInsuranceService_UpdateCustomerVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerProductInfoByCustomerProductId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerProductInfoByCustomerProductId" message="tns:IInsuranceService_GetCustomerProductInfoByCustomerProductId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCustomerProductInfoByCustomerProductIdResponse" message="tns:IInsuranceService_GetCustomerProductInfoByCustomerProductId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCustomerAddresses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SaveCustomerAddresses" message="tns:IInsuranceService_SaveCustomerAddresses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SaveCustomerAddressesResponse" message="tns:IInsuranceService_SaveCustomerAddresses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBKMToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetBKMToken" message="tns:IInsuranceService_GetBKMToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetBKMTokenResponse" message="tns:IInsuranceService_GetBKMToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBentasPolicy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetBentasPolicy" message="tns:IInsuranceService_GetBentasPolicy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetBentasPolicyResponse" message="tns:IInsuranceService_GetBentasPolicy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/Login" message="tns:IInsuranceService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/LoginResponse" message="tns:IInsuranceService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePINCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/CreatePINCode" message="tns:IInsuranceService_CreatePINCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/CreatePINCodeResponse" message="tns:IInsuranceService_CreatePINCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLoginInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetUserLoginInformation" message="tns:IInsuranceService_GetUserLoginInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetUserLoginInformationResponse" message="tns:IInsuranceService_GetUserLoginInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/Logout" message="tns:IInsuranceService_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/LogoutResponse" message="tns:IInsuranceService_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EncryptPhoneNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/EncryptPhoneNumber" message="tns:IInsuranceService_EncryptPhoneNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/EncryptPhoneNumberResponse" message="tns:IInsuranceService_EncryptPhoneNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DecryptPhoneNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/DecryptPhoneNumber" message="tns:IInsuranceService_DecryptPhoneNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/DecryptPhoneNumberResponse" message="tns:IInsuranceService_DecryptPhoneNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchAllCommunication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SearchAllCommunication" message="tns:IInsuranceService_SearchAllCommunication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SearchAllCommunicationResponse" message="tns:IInsuranceService_SearchAllCommunication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEuroMessageEmailWithAttach">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SendEuroMessageEmailWithAttach" message="tns:IInsuranceService_SendEuroMessageEmailWithAttach_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SendEuroMessageEmailWithAttachResponse" message="tns:IInsuranceService_SendEuroMessageEmailWithAttach_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerCommunication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/AddCustomerCommunication" message="tns:IInsuranceService_AddCustomerCommunication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/AddCustomerCommunicationResponse" message="tns:IInsuranceService_AddCustomerCommunication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerNetCommunication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/UpdateCustomerNetCommunication" message="tns:IInsuranceService_UpdateCustomerNetCommunication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/UpdateCustomerNetCommunicationResponse" message="tns:IInsuranceService_UpdateCustomerNetCommunication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerVehicleWithCustomerNetId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/UpdateCustomerVehicleWithCustomerNetId" message="tns:IInsuranceService_UpdateCustomerVehicleWithCustomerNetId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/UpdateCustomerVehicleWithCustomerNetIdResponse" message="tns:IInsuranceService_UpdateCustomerVehicleWithCustomerNetId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageActionLogDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetMessageActionLogDetail" message="tns:IInsuranceService_GetMessageActionLogDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetMessageActionLogDetailResponse" message="tns:IInsuranceService_GetMessageActionLogDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCommunicationInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/SearchCommunicationInfo" message="tns:IInsuranceService_SearchCommunicationInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/SearchCommunicationInfoResponse" message="tns:IInsuranceService_SearchCommunicationInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommunicationById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/GetCommunicationById" message="tns:IInsuranceService_GetCommunicationById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/GetCommunicationByIdResponse" message="tns:IInsuranceService_GetCommunicationById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCommunication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/InsertCommunication" message="tns:IInsuranceService_InsertCommunication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/InsertCommunicationResponse" message="tns:IInsuranceService_InsertCommunication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCommunication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/UpdateCommunication" message="tns:IInsuranceService_UpdateCommunication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/UpdateCommunicationResponse" message="tns:IInsuranceService_UpdateCommunication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCampaingCustomerInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInsuranceService/AddCampaingCustomerInfo" message="tns:IInsuranceService_AddCampaingCustomerInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInsuranceService/AddCampaingCustomerInfoResponse" message="tns:IInsuranceService_AddCampaingCustomerInfo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsHttpEP" type="tns:IInsuranceService">
+    <wsp:PolicyReference URI="#wsHttpEP_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCampaingCustomerInfo">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCampaingCustomerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampaingDefinition">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCampaingDefinition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasCustomerPolicyProductLastFiveDay">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/HasCustomerPolicyProductLastFiveDay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ControlDoId">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/ControlDoId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPolicyEmail">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SendPolicyEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPolicyEmailWithPolicyId">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SendPolicyEmailWithPolicyId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddInsuranceCommunication">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/AddInsuranceCommunication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishException">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/PublishException" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteExceptionMessageToEventLog">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/WriteExceptionMessageToEventLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineInsuranceFirmList">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetOnlineInsuranceFirmList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInsuranceFirmOfferSelfishness">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/CheckInsuranceFirmOfferSelfishness" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterGroup">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetParameterGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubParameters">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetSubParameters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsageTypes">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetUsageTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaCodes">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetAreaCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerActivityLog">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/AddCustomerActivityLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityNames">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCityNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTownNames">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetTownNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogMobileCalls">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/LogMobileCalls" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthCheck">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/HealthCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParameterByParameterCode">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetParameterByParameterCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubParameter">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetSubParameter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertStringToPdf">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/ConvertStringToPdf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerNetAddressByAddressId">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCustomerNetAddressByAddressId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerProduct">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCustomerProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerAddressIdsRelatedWithOffer">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCustomerAddressIdsRelatedWithOffer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerAddressToCustomerNet">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/AddCustomerAddressToCustomerNet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerNetAddress">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/UpdateCustomerNetAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAllCommunicationWithCusId">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SearchAllCommunicationWithCusId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerWithCustomerNetId">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCustomerWithCustomerNetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddresses">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetAddresses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddInsuranceAddress">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/AddInsuranceAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInsuranceAddress">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/UpdateInsuranceAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateAddressToAllSources">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/AddOrUpdateAddressToAllSources" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPermittedMarketing">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/AddPermittedMarketing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPermittedMarketingWithType">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/AddPermittedMarketingWithType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPermittedMarketingApprovalText">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetPermittedMarketingApprovalText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPermittedMarketing">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetPermittedMarketing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCustomerAuthorizationForCreatePolicy">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/CheckCustomerAuthorizationForCreatePolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerAddressIdsRelatedCustomerNetCusId">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCustomerAddressIdsRelatedCustomerNetCusId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerNetCustomer">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCustomerNetCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckKVKKCustomerApprove">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/CheckKVKKCustomerApprove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertKVKKCustomerApprove">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/InsertKVKKCustomerApprove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomerAndProducts">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/CreateCustomerAndProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBentasCustomerVehicleInfo">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetBentasCustomerVehicleInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInsuranceCustomer">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetInsuranceCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVdfCustomerAddresses">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetVdfCustomerAddresses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommunicationByType">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCommunicationByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchedVehicleInfoWithPolicyId">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetMatchedVehicleInfoWithPolicyId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineOfferList">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetOnlineOfferList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateOfferAlternatives">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/CalculateOfferAlternatives" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTrafficOfferAlternatives">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/CalculateTrafficOfferAlternatives" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductOfferWithOfferId">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SaveProductOfferWithOfferId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintOffer">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/PrintOffer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectPaymentTypeForOffer">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SelectPaymentTypeForOffer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfferInfo">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetOfferInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRenewalParametersForMobile">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetRenewalParametersForMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicySummaryMobile">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetPolicySummaryMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionInformationFormWithOfferId">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCollectionInformationFormWithOfferId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreviousPolicyReponse">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetPreviousPolicyReponse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleModelsByBrandCode">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetVehicleModelsByBrandCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleBrand">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetVehicleBrand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleSubModelByBrandCodeAndYear">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetVehicleSubModelByBrandCodeAndYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCustomerAsWantsCall">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SetCustomerAsWantsCall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleWithBrandAndModelCode">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetVehicleWithBrandAndModelCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInsuranceOffers">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/CalculateInsuranceOffers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTrafficOffers">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/CalculateTrafficOffers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoverPage">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCoverPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOfferEmail">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SendOfferEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOTPSms">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SendOTPSms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ControlOTPSms">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/ControlOTPSms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGuestToken">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/ValidateGuestToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCaptchaInfo">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SaveCaptchaInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCaptchaInfo">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/CheckCaptchaInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoLogin">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/AutoLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPinCode">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetPinCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerPermittedMarketing">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/UpdateCustomerPermittedMarketing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuperTokenForTest">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetSuperTokenForTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTask">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/AddTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTaskForWeb">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/AddTaskForWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTaskFile">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/AddTaskFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerTasks">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCustomerTasks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerTasksByCustomerId">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCustomerTasksByCustomerId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryList">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCategoryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategoryForWeb">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetSubCategoryForWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryListMobile">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCategoryListMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTaskFile">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/DeleteTaskFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskFileEntityObject">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetTaskFileEntityObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelTask">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/CancelTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddInsuranceCustomerOperationSingleCallResult">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/AddInsuranceCustomerOperationSingleCallResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskFileCount">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetTaskFileCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicyVehicleInfo">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetPolicyVehicleInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivePolicyList">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetActivePolicyList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicyCollectionList">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetPolicyCollectionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationList">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetNotificationList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBentasPolPropDetail">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetBentasPolPropDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBentasPolicyPropertyList">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetBentasPolicyPropertyList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintPolicyForBentas">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/PrintPolicyForBentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintPolicyWithOfferId">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/PrintPolicyWithOfferId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintOfferInformationForm">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/PrintOfferInformationForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintOfferInformationFormPdf">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/PrintOfferInformationFormPdf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintOfferInformationFormText">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/PrintOfferInformationFormText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintCreditCardContractForm">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/PrintCreditCardContractForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSelectedOnlinePolicy">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SetSelectedOnlinePolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSelectedManualPolicy">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SetSelectedManualPolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePolicyForMoneyTransfer">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/CreatePolicyForMoneyTransfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePolicyWithCreditCard">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/CreatePolicyWithCreditCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePolicyWitCreditCard">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/CreatePolicyWitCreditCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicyRenewalCountMobile">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetPolicyRenewalCountMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerVehicle">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCustomerVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerProduct">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/UpdateCustomerProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerVehicle">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/UpdateCustomerVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerProductInfoByCustomerProductId">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCustomerProductInfoByCustomerProductId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCustomerAddresses">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SaveCustomerAddresses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBKMToken">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetBKMToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBentasPolicy">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetBentasPolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePINCode">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/CreatePINCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLoginInformation">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetUserLoginInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/Logout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncryptPhoneNumber">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/EncryptPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DecryptPhoneNumber">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/DecryptPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAllCommunication">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SearchAllCommunication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEuroMessageEmailWithAttach">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SendEuroMessageEmailWithAttach" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerCommunication">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/AddCustomerCommunication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerNetCommunication">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/UpdateCustomerNetCommunication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerVehicleWithCustomerNetId">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/UpdateCustomerVehicleWithCustomerNetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageActionLogDetail">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetMessageActionLogDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCommunicationInfo">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/SearchCommunicationInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommunicationById">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/GetCommunicationById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCommunication">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/InsertCommunication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCommunication">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/UpdateCommunication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCampaingCustomerInfo">
+      <soap12:operation soapAction="http://tempuri.org/IInsuranceService/AddCampaingCustomerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InsuranceService">
+    <wsdl:port name="wsHttpEP" binding="tns:wsHttpEP">
+      <soap12:address location="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

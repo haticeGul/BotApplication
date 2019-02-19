@@ -1,0 +1,2066 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.Customer" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Renewal" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Enumerations" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.VDFInsuranceWS" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Security" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.TaskManagement" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.SecurityNetVdfMobileServiceWS" />
+  <xs:import schemaLocation="http://vdfwcfservicestest/InsuranceOnlineWS/InsuranceService.svc?xsd=xsd22" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:element name="GetCampaingCustomerInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCampaingCustomerInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCampaingCustomerInfoResult" nillable="true" type="q1:ResponseMessageOfArrayOfPCCampaingCustomerInfoISE_P3Nmm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCampaingDefinition">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCampaingDefinitionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCampaingDefinitionResult" nillable="true" type="q2:ResponseMessageOfArrayOfPCCampaingDefinitionISE_P3Nmm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasCustomerPolicyProductLastFiveDay">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasCustomerPolicyProductLastFiveDayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="HasCustomerPolicyProductLastFiveDayResult" nillable="true" type="q3:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlDoId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="doId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="doPrefix" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlDoIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="ControlDoIdResult" nillable="true" type="q4:ResponseMessageOfDoResponsegJjm7MZu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPolicyEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="offerId" type="xs:int" />
+        <xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="file" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPolicyEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SendPolicyEmailResult" nillable="true" type="q5:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPolicyEmailWithPolicyId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="policyId" type="xs:int" />
+        <xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="file" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendPolicyEmailWithPolicyIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SendPolicyEmailWithPolicyIdResult" nillable="true" type="q6:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddInsuranceCommunication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="communication" nillable="true" type="q7:IS_Communication" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddInsuranceCommunicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="AddInsuranceCommunicationResult" nillable="true" type="q8:ResponseMessageOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PublishException">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="exceptionInfo" nillable="true" type="q9:ArrayOfKeyValueOfstringstring" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="additionalInfo" nillable="true" type="q10:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PublishExceptionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteExceptionMessageToEventLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteExceptionMessageToEventLogResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineInsuranceFirmList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineInsuranceFirmListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetOnlineInsuranceFirmListResult" nillable="true" type="q11:ResponseMessageOfArrayOfPCInsuranceFirmaD1_SLJRT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckInsuranceFirmOfferSelfishness">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="policyId" type="xs:int" />
+        <xs:element minOccurs="0" name="productType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckInsuranceFirmOfferSelfishnessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="CheckInsuranceFirmOfferSelfishnessResult" nillable="true" type="q12:ResponseMessageOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParameterGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parameterGroupId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParameterGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetParameterGroupResult" nillable="true" type="q13:ResponseMessageOfArrayOfview_ParParameterKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parameterId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubParametersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetSubParametersResult" nillable="true" type="q14:ResponseMessageOfArrayOfview_ParSubParameterKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsageTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsageTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetUsageTypesResult" nillable="true" type="q15:ResponseMessageOfArrayOfPCUsageTypeaD1_SLJRT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAreaCodes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="isCellular" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAreaCodesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetAreaCodesResult" nillable="true" type="q16:ResponseMessageOfArrayOfPcAreaCodeISE_P3Nmm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCustomerActivityLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="applicationName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="productCode" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="policyId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="creditId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="actionName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="detail" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCustomerActivityLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="AddCustomerActivityLogResult" nillable="true" type="q17:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCityNames">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCityNamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCityNamesResult" nillable="true" type="q18:ResponseMessageOfArrayOfKeyValueOfstringstringuHEDJ7Dj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTownNames">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CityId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTownNamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetTownNamesResult" nillable="true" type="q19:ResponseMessageOfArrayOfKeyValueOfstringstringuHEDJ7Dj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogMobileCalls">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="log" nillable="true" type="q20:MobilServiceLog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogMobileCallsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="LogMobileCallsResult" nillable="true" type="q21:ResponseMessageOfMobilServiceLogKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HealthCheck">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HealthCheckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HealthCheckResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParameterByParameterCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parameterCode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParameterByParameterCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetParameterByParameterCodeResult" nillable="true" type="q22:ResponseMessageOfArrayOfview_ParParameterKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubParameter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="subParameterId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubParameterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetSubParameterResult" nillable="true" type="q23:ResponseMessageOfview_ParSubParameterKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertStringToPdf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertStringToPdfResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="ConvertStringToPdfResult" nillable="true" type="q24:ResponseMessageOfbase64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerNetAddressByAddressId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addressId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerNetAddressByAddressIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCustomerNetAddressByAddressIdResult" nillable="true" type="q25:ResponseMessageOfPCAddressWHr5_S_P2w" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerProductId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCustomerProductResult" nillable="true" type="q26:ResponseMessageOfIS_CustomerProductKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerAddressIdsRelatedWithOffer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="offerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerAddressIdsRelatedWithOfferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCustomerAddressIdsRelatedWithOfferResult" nillable="true" type="q27:ResponseMessageOfArrayOfPCCustomerAddressesRelatedWithOffertY9PdCPl" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCustomerAddressToCustomerNet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.Customer" minOccurs="0" name="address" nillable="true" type="q28:PCAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCustomerAddressToCustomerNetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="AddCustomerAddressToCustomerNetResult" nillable="true" type="q29:ResponseMessageOfPCAddressWHr5_S_P2w" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerNetAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.Customer" minOccurs="0" name="address" nillable="true" type="q30:PCAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerNetAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="UpdateCustomerNetAddressResult" nillable="true" type="q31:ResponseMessageOfPCAddressWHr5_S_P2w" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAllCommunicationWithCusId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAllCommunicationWithCusIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SearchAllCommunicationWithCusIdResult" nillable="true" type="q32:ResponseMessageOfArrayOfPCCustomerCommunicationInfoISE_P3Nmm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerWithCustomerNetId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customernetId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerWithCustomerNetIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCustomerWithCustomerNetIdResult" nillable="true" type="q33:ResponseMessageOfIS_CustomerKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddresses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insuranceCusId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddressesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetAddressesResult" nillable="true" type="q34:ResponseMessageOfArrayOfview_AddressKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addressId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetAddressResult" nillable="true" type="q35:ResponseMessageOfview_AddressKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddInsuranceAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="address" nillable="true" type="q36:IS_Address" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddInsuranceAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="AddInsuranceAddressResult" nillable="true" type="q37:ResponseMessageOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateInsuranceAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="address" nillable="true" type="q38:IS_Address" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateInsuranceAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="UpdateInsuranceAddressResult" nillable="true" type="q39:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOrUpdateAddressToAllSources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.Customer" minOccurs="0" name="address" nillable="true" type="q40:PCAddress" />
+        <xs:element minOccurs="0" name="insuranceCusId" type="xs:int" />
+        <xs:element minOccurs="0" name="insuranceTownCode" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOrUpdateAddressToAllSourcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="AddOrUpdateAddressToAllSourcesResult" nillable="true" type="q41:ResponseMessageOfview_AddressKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPermittedMarketing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="smsApprove" type="xs:boolean" />
+        <xs:element minOccurs="0" name="emailApprove" type="xs:boolean" />
+        <xs:element minOccurs="0" name="telemarketingApprove" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPermittedMarketingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="AddPermittedMarketingResult" nillable="true" type="q42:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPermittedMarketingWithType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="smsApprove" type="xs:boolean" />
+        <xs:element minOccurs="0" name="emailApprove" type="xs:boolean" />
+        <xs:element minOccurs="0" name="telemarketingApprove" type="xs:boolean" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.Customer" minOccurs="0" name="type" type="q43:PermittedMarketingChannelTypes" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPermittedMarketingWithTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="AddPermittedMarketingWithTypeResult" nillable="true" type="q44:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermittedMarketingApprovalText">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermittedMarketingApprovalTextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetPermittedMarketingApprovalTextResult" nillable="true" type="q45:ResponseMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermittedMarketing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermittedMarketingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetPermittedMarketingResult" nillable="true" type="q46:ResponseMessageOfPCPermittedMarketingResultDetailms0ZHSUN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCustomerAuthorizationForCreatePolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tcIdentityNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCustomerAuthorizationForCreatePolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="CheckCustomerAuthorizationForCreatePolicyResult" nillable="true" type="q47:ResponseMessageOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerAddressIdsRelatedCustomerNetCusId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerNetCusId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerAddressIdsRelatedCustomerNetCusIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCustomerAddressIdsRelatedCustomerNetCusIdResult" nillable="true" type="q48:ResponseMessageOfArrayOfPCCustomerAddressesRelatedWithOffertY9PdCPl" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerNetCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerNetCusId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerNetCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCustomerNetCustomerResult" nillable="true" type="q49:ResponseMessageOfview_CustomerKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckKVKKCustomerApprove">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckKVKKCustomerApproveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="CheckKVKKCustomerApproveResult" nillable="true" type="q50:ResponseMessageOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertKVKKCustomerApprove">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CusId" type="xs:int" />
+        <xs:element minOccurs="0" name="CustomerApprove" type="xs:boolean" />
+        <xs:element minOccurs="0" name="KVKKCustomerApproveChannelId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertKVKKCustomerApproveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="InsertKVKKCustomerApproveResult" nillable="true" type="q51:ResponseMessageOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCustomerAndProducts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Renewal" minOccurs="0" name="request" nillable="true" type="q52:CreateCustomerAndProducForNewSaletRequest" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCustomerAndProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="CreateCustomerAndProductsResult" nillable="true" type="q53:ResponseMessageOfCreateCustomerAndProductForNewSaleResponseofDGA4Jz" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBentasCustomerVehicleInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tckn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="plate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBentasCustomerVehicleInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetBentasCustomerVehicleInfoResult" nillable="true" type="q54:ResponseMessageOfPCBentasPolicyVehicleInfoZ094EfyP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInsuranceCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInsuranceCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetInsuranceCustomerResult" nillable="true" type="q55:ResponseMessageOfIS_CustomerKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVdfCustomerAddresses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVdfCustomerAddressesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetVdfCustomerAddressesResult" nillable="true" type="q56:ResponseMessageOfArrayOfview_VDFCustomerAddressListKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommunicationByType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommunicationByTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCommunicationByTypeResult" nillable="true" type="q57:ResponseMessageOfArrayOfIS_CommunicationKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMatchedVehicleInfoWithPolicyId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="policyId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMatchedVehicleInfoWithPolicyIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetMatchedVehicleInfoWithPolicyIdResult" nillable="true" type="q58:ResponseMessageOfview_MatchedBentasPolicesWithVehicleInfoKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineOfferList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="policyId" type="xs:int" />
+        <xs:element minOccurs="0" name="insuranceFirmId" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineOfferListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetOnlineOfferListResult" nillable="true" type="q59:ResponseMessageOfArrayOfIS_ProductOfferKqtyDP_PV" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Enumerations" minOccurs="0" name="returnCode" type="q60:SelfServiceOfferReturnCodes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateOfferAlternatives">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="policyId" type="xs:int" />
+        <xs:element minOccurs="0" name="allAlternatives" type="xs:boolean" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" minOccurs="0" name="parameters" nillable="true" type="q61:PCOfferCalculationParameters" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" minOccurs="0" name="vehicleParameter" nillable="true" type="q62:PcOfferCalculationVehicleParameter" />
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateOfferAlternativesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="CalculateOfferAlternativesResult" nillable="true" type="q63:ResponseMessage" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="offerList" nillable="true" type="q64:ArrayOfIS_ProductOffer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateTrafficOfferAlternatives">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="policyId" type="xs:int" />
+        <xs:element minOccurs="0" name="allAlternatives" type="xs:boolean" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" minOccurs="0" name="parameters" nillable="true" type="q65:PCOfferCalculationParameters" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" minOccurs="0" name="vehicleParameter" nillable="true" type="q66:PcOfferCalculationVehicleParameter" />
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateTrafficOfferAlternativesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="CalculateTrafficOfferAlternativesResult" nillable="true" type="q67:ResponseMessage" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="offerList" nillable="true" type="q68:ArrayOfIS_ProductOffer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveProductOfferWithOfferId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="offerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveProductOfferWithOfferIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SaveProductOfferWithOfferIdResult" nillable="true" type="q69:ResponseMessageOfIS_CustomerVehicleKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintOffer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="offerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintOfferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="PrintOfferResult" nillable="true" type="q70:ResponseMessageOfbase64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectPaymentTypeForOffer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="offerId" type="xs:int" />
+        <xs:element minOccurs="0" name="policyAddressId" type="xs:int" />
+        <xs:element minOccurs="0" name="cargoAddressId" type="xs:int" />
+        <xs:element minOccurs="0" name="paymentType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="engineNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="chasisNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gsmNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectPaymentTypeForOfferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SelectPaymentTypeForOfferResult" nillable="true" type="q71:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfferInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="offerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfferInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetOfferInfoResult" nillable="true" type="q72:ResponseMessageOfIS_ProductOfferKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRenewalParametersForMobile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="chassisNo" nillable="true" type="xs:string" />
+        <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="policyIdList" nillable="true" type="q73:ArrayOfint" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRenewalParametersForMobileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetRenewalParametersForMobileResult" nillable="true" type="q74:ResponseMessageOfMobileRenewalParametersofDGA4Jz" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPolicySummaryMobile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="offerIdList" nillable="true" type="q75:ArrayOfint" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPolicySummaryMobileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetPolicySummaryMobileResult" nillable="true" type="q76:ResponseMessageOfMobilePolicySummarygJjm7MZu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCollectionInformationFormWithOfferId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="offerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCollectionInformationFormWithOfferIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCollectionInformationFormWithOfferIdResult" nillable="true" type="q77:ResponseMessageOfbase64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPreviousPolicyReponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.VDFInsuranceWS" minOccurs="0" name="request" nillable="true" type="q78:PreviousPolicyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPreviousPolicyReponseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetPreviousPolicyReponseResult" nillable="true" type="q79:ResponseMessageOfPreviousPolicyResponseO2F5P8sB" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleModelsByBrandCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="brandCode" type="xs:int" />
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleModelsByBrandCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetVehicleModelsByBrandCodeResult" nillable="true" type="q80:ResponseMessageOfArrayOfPCVehicleModel4mA3Gz_S2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleBrand">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleBrandResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetVehicleBrandResult" nillable="true" type="q81:ResponseMessageOfArrayOfPCVehicleBrand4mA3Gz_S2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleSubModelByBrandCodeAndYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="brandCode" type="xs:int" />
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+        <xs:element minOccurs="0" name="modelName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleSubModelByBrandCodeAndYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetVehicleSubModelByBrandCodeAndYearResult" nillable="true" type="q82:ResponseMessageOfArrayOfPCVehicleSubModel4mA3Gz_S2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCustomerAsWantsCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerProductId" type="xs:int" />
+        <xs:element minOccurs="0" name="wantsCall" type="xs:boolean" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="callReason" type="xs:int" />
+        <xs:element minOccurs="0" name="identityNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCustomerAsWantsCallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SetCustomerAsWantsCallResult" nillable="true" type="q83:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleWithBrandAndModelCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="brandCode" type="xs:int" />
+        <xs:element minOccurs="0" name="modelCode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleWithBrandAndModelCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetVehicleWithBrandAndModelCodeResult" nillable="true" type="q84:ResponseMessageOfPCVehicleSubModel4mA3Gz_S2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateInsuranceOffers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" minOccurs="0" name="parameters" nillable="true" type="q85:PCOfferCalculationParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateInsuranceOffersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="CalculateInsuranceOffersResult" nillable="true" type="q86:ResponseMessageOfArrayOfPCGeneralOfferResponseaD1_SLJRT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateTrafficOffers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" minOccurs="0" name="parameters" nillable="true" type="q87:PCOfferCalculationParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateTrafficOffersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="CalculateTrafficOffersResult" nillable="true" type="q88:ResponseMessageOfArrayOfPCGeneralOfferResponseaD1_SLJRT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCoverPage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerProductId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCoverPageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCoverPageResult" nillable="true" type="q89:ResponseMessageOfbase64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendOfferEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="offerId" type="xs:int" />
+        <xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="file" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendOfferEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SendOfferEmailResult" nillable="true" type="q90:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendOTPSms">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Security" minOccurs="0" name="request" nillable="true" type="q91:GuestCustomerLoginRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendOTPSmsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SendOTPSmsResult" nillable="true" type="q92:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlOTPSms">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Security" minOccurs="0" name="request" nillable="true" type="q93:GuestCustomerLoginRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ControlOTPSmsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="ControlOTPSmsResult" nillable="true" type="q94:ResponseMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateGuestToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateGuestTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="ValidateGuestTokenResult" nillable="true" type="q95:ResponseMessageOfGuestCustomerInfo4PmyTwbE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCaptchaInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="log" nillable="true" type="q96:CaptchaLog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCaptchaInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SaveCaptchaInfoResult" nillable="true" type="q97:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCaptchaInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="log" nillable="true" type="q98:CaptchaLog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCaptchaInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="CheckCaptchaInfoResult" nillable="true" type="q99:ResponseMessageOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Security" minOccurs="0" name="request" nillable="true" type="q100:GuestCustomerLoginRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoLoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="AutoLoginResult" nillable="true" type="q101:ResponseMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPinCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tckn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPinCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetPinCodeResult" nillable="true" type="q102:ResponseMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerPermittedMarketing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="identityNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="permission" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerPermittedMarketingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="UpdateCustomerPermittedMarketingResult" nillable="true" type="q103:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuperTokenForTest">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSuperTokenForTestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetSuperTokenForTestResult" nillable="true" type="q104:ResponseMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskHeader" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="taskCategoryId" type="xs:int" />
+        <xs:element minOccurs="0" name="taskSubCategoryId" type="xs:int" />
+        <xs:element minOccurs="0" name="plannedStartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="importance" type="xs:int" />
+        <xs:element minOccurs="0" name="referenceType" type="xs:int" />
+        <xs:element minOccurs="0" name="referenceTypeValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="explanation" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="AddTaskResult" nillable="true" type="q105:ResponseMessageOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTaskForWeb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskHeader" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="taskCategoryId" type="xs:int" />
+        <xs:element minOccurs="0" name="taskSubCategoryId" type="xs:int" />
+        <xs:element minOccurs="0" name="plannedStartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="importance" type="xs:int" />
+        <xs:element minOccurs="0" name="referenceType" type="xs:int" />
+        <xs:element minOccurs="0" name="referenceTypeValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="explanation" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.TaskManagement" minOccurs="0" name="fileList" nillable="true" type="q106:ArrayOfPCTaskFile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTaskForWebResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="AddTaskForWebResult" nillable="true" type="q107:ResponseMessageOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTaskFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" minOccurs="0" name="taskFile" nillable="true" type="q108:TaskFile" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stream" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTaskFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="AddTaskFileResult" nillable="true" type="q109:ResponseMessageOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerTasks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerTasksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCustomerTasksResult" nillable="true" type="q110:ResponseMessageOfArrayOfview_CustomerTaskvOSCZq0G" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerTasksByCustomerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerTasksByCustomerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCustomerTasksByCustomerIdResult" nillable="true" type="q111:ResponseMessageOfArrayOfview_CustomerTaskvOSCZq0G" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common" minOccurs="0" name="type" type="q112:MainPoolType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoryListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCategoryListResult" nillable="true" type="q113:ResponseMessageOfArrayOfParTaskSubCategoryvOSCZq0G" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubCategoryForWeb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="subCategoryId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubCategoryForWebResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetSubCategoryForWebResult" nillable="true" type="q114:ResponseMessageOfParTaskSubCategoryvOSCZq0G" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoryListMobile">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoryListMobileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCategoryListMobileResult" nillable="true" type="q115:ResponseMessageOfArrayOfParTaskSubCategoryvOSCZq0G" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTaskFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTaskFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="DeleteTaskFileResult" nillable="true" type="q116:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskFileEntityObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskFileEntityObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetTaskFileEntityObjectResult" nillable="true" type="q117:ResponseMessageOfTaskFilevOSCZq0G" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetTaskResult" nillable="true" type="q118:ResponseMessageOfTaskvOSCZq0G" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="CancelTaskResult" nillable="true" type="q119:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddInsuranceCustomerOperationSingleCallResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" minOccurs="0" name="pcInsuranceCusCallResult" nillable="true" type="q120:PCInsuranceCusCallResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddInsuranceCustomerOperationSingleCallResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="AddInsuranceCustomerOperationSingleCallResultResult" nillable="true" type="q121:ResponseMessageOfPCInsuranceCusCallResultaD1_SLJRT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskFileCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="taskId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskFileCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetTaskFileCountResult" nillable="true" type="q122:ResponseMessageOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPolicyVehicleInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insuranceCusId" type="xs:int" />
+        <xs:element minOccurs="0" name="plate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPolicyVehicleInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetPolicyVehicleInfoResult" nillable="true" type="q123:ResponseMessageOfIS_CustomerVehicleKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActivePolicyList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActivePolicyListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetActivePolicyListResult" nillable="true" type="q124:ResponseMessageOfArrayOfview_ActivePoliciesKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPolicyCollectionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="month" type="xs:int" />
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPolicyCollectionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetPolicyCollectionListResult" nillable="true" type="q125:ResponseMessageOfArrayOfPCPolicyCollectionResultDetailISE_P3Nmm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotificationList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="month" type="xs:int" />
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotificationListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetNotificationListResult" nillable="true" type="q126:ResponseMessageOfArrayOfview_GetCustomersNotificationKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBentasPolPropDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="policyId" type="xs:int" />
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBentasPolPropDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetBentasPolPropDetailResult" nillable="true" type="q127:ResponseMessageOfPCBentasPolPropDetail30fOR8Li" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBentasPolicyPropertyList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="policyId" type="xs:int" />
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBentasPolicyPropertyListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetBentasPolicyPropertyListResult" nillable="true" type="q128:ResponseMessageOfArrayOfBentasPolicyPropertyKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintPolicyForBentas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="policyId" type="xs:int" />
+        <xs:element minOccurs="0" name="productCode" type="xs:int" />
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="identityNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintPolicyForBentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="PrintPolicyForBentasResult" nillable="true" type="q129:ResponseMessageOfbase64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintPolicyWithOfferId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="offerId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="identityNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintPolicyWithOfferIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="PrintPolicyWithOfferIdResult" nillable="true" type="q130:ResponseMessageOfbase64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintOfferInformationForm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="offerId" type="xs:int" />
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintOfferInformationFormResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="PrintOfferInformationFormResult" nillable="true" type="q131:ResponseMessageOfbase64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintOfferInformationFormPdf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="offerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintOfferInformationFormPdfResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="PrintOfferInformationFormPdfResult" nillable="true" type="q132:ResponseMessageOfbase64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintOfferInformationFormText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="offerId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintOfferInformationFormTextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="PrintOfferInformationFormTextResult" nillable="true" type="q133:ResponseMessageOfbase64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintCreditCardContractForm">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrintCreditCardContractFormResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="PrintCreditCardContractFormResult" nillable="true" type="q134:ResponseMessageOfbase64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSelectedOnlinePolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="customerProduct" nillable="true" type="q135:IS_CustomerProduct" />
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="vehicle" nillable="true" type="q136:IS_CustomerVehicle" />
+        <xs:element minOccurs="0" name="cargoAddressId" type="xs:int" />
+        <xs:element minOccurs="0" name="newAddressId" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSelectedOnlinePolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SetSelectedOnlinePolicyResult" nillable="true" type="q137:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSelectedManualPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerProductId" type="xs:int" />
+        <xs:element minOccurs="0" name="cargoAddressId" type="xs:int" />
+        <xs:element minOccurs="0" name="newAddressId" type="xs:int" />
+        <xs:element minOccurs="0" name="phoneNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="smsText" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isSendSms" type="xs:boolean" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSelectedManualPolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SetSelectedManualPolicyResult" nillable="true" type="q138:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePolicyForMoneyTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="offerId" type="xs:int" />
+        <xs:element minOccurs="0" name="isSendSms" type="xs:boolean" />
+        <xs:element minOccurs="0" name="gsmNumberForSms" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isNotSendPolicyWithCargo" type="xs:boolean" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePolicyForMoneyTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="CreatePolicyForMoneyTransferResult" nillable="true" type="q139:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePolicyWithCreditCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" minOccurs="0" name="request" nillable="true" type="q140:PCPolicyWithCreditCardRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePolicyWithCreditCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="CreatePolicyWithCreditCardResult" nillable="true" type="q141:ResponseMessageOfPCCreatePolicyResponsegJjm7MZu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePolicyWitCreditCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="offerId" type="xs:int" />
+        <xs:element minOccurs="0" name="isSendSms" type="xs:boolean" />
+        <xs:element minOccurs="0" name="gsmNumberForSms" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isNotSendPolicyWithCargo" type="xs:boolean" />
+        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Parameter" minOccurs="0" name="creditCard" nillable="true" type="q142:PCCreditCardInformation" />
+        <xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePolicyWitCreditCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="CreatePolicyWitCreditCardResult" nillable="true" type="q143:ResponseMessageOfPCCreatePolicyResponsegJjm7MZu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPolicyRenewalCountMobile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPolicyRenewalCountMobileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetPolicyRenewalCountMobileResult" nillable="true" type="q144:ResponseMessageOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerVehicle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerVehicleId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerVehicleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCustomerVehicleResult" nillable="true" type="q145:ResponseMessageOfIS_CustomerVehicleKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="customerProduct" nillable="true" type="q146:IS_CustomerProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="UpdateCustomerProductResult" nillable="true" type="q147:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerVehicle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="vehicle" nillable="true" type="q148:IS_CustomerVehicle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerVehicleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="UpdateCustomerVehicleResult" nillable="true" type="q149:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerProductInfoByCustomerProductId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerProductId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerProductInfoByCustomerProductIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCustomerProductInfoByCustomerProductIdResult" nillable="true" type="q150:ResponseMessageOfArrayOfPCCustomerProducttY9PdCPl" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCustomerAddresses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Model" minOccurs="0" name="customerAddresses" nillable="true" type="q151:ArrayOfIS_AddressHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCustomerAddressesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SaveCustomerAddressesResult" nillable="true" type="q152:ResponseMessageOfArrayOfIS_AddressHistoryKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBKMToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="creditCard" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tckn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBKMTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.VDFInsuranceWS" minOccurs="0" name="GetBKMTokenResult" nillable="true" type="q153:BKMGetTokenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBentasPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="policyId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBentasPolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetBentasPolicyResult" nillable="true" type="q154:ResponseMessageOfBentasPolicyKqtyDP_PV" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.SecurityNetVdfMobileServiceWS" minOccurs="0" name="authenticationType" type="q155:AuthenticationType" />
+        <xs:element minOccurs="0" name="requiredLoginInfo1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requiredLoginInfo2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pinCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="deviceType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q156="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.SecurityNetVdfMobileServiceWS" minOccurs="0" name="LoginResult" nillable="true" type="q156:ResponseMessageOfPCVdfMobileWSUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePINCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.SecurityNetVdfMobileServiceWS" minOccurs="0" name="authenticationType" type="q157:AuthenticationType" />
+        <xs:element minOccurs="0" name="requiredInfo1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requiredInfo2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="phoneNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePINCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.SecurityNetVdfMobileServiceWS" minOccurs="0" name="CreatePINCodeResult" nillable="true" type="q158:ResponseMessageOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserLoginInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="requiredLoginInfo1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requiredLoginInfo2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="authenticationType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserLoginInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.SecurityNetVdfMobileServiceWS" minOccurs="0" name="GetUserLoginInformationResult" nillable="true" type="q159:ResponseMessageOfPCUserInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Logout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.SecurityNetVdfMobileServiceWS" minOccurs="0" name="LogoutResult" nillable="true" type="q160:ResponseMessageOfInt32" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EncryptPhoneNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="phoneNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EncryptPhoneNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EncryptPhoneNumberResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DecryptPhoneNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="encryptPhoneNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DecryptPhoneNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DecryptPhoneNumberResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAllCommunication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAllCommunicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SearchAllCommunicationResult" nillable="true" type="q161:ResponseMessageOfArrayOfPCCustomerCommunicationInfoISE_P3Nmm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEuroMessageEmailWithAttach">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="toAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="fileList" nillable="true" type="q162:ArrayOfKeyValuePairOfstringbase64Binary" />
+        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element minOccurs="0" name="customerType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="policyId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEuroMessageEmailWithAttachResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SendEuroMessageEmailWithAttachResult" nillable="true" type="q163:ResponseMessageOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCustomerCommunication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCustomerCommunicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="AddCustomerCommunicationResult" nillable="true" type="q164:ResponseMessageOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerNetCommunication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerNetCommunicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="UpdateCustomerNetCommunicationResult" nillable="true" type="q165:ResponseMessageOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerVehicleWithCustomerNetId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerNetCusId" type="xs:int" />
+        <xs:element minOccurs="0" name="currentPlate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPlate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="asbisNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="registrationNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="chasisNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerVehicleWithCustomerNetIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="UpdateCustomerVehicleWithCustomerNetIdResult" nillable="true" type="q166:ResponseMessageOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessageActionLogDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callHistoryId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessageActionLogDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q167="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetMessageActionLogDetailResult" nillable="true" type="q167:ResponseMessageOfPCMessageActionLogn7NY9Yzd" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCommunicationInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Enumerations" minOccurs="0" name="communicationType" type="q168:CustomerCommunicationType" />
+        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Enumerations" minOccurs="0" name="subCommunicationType" type="q169:CustomerCommunicationSubType" />
+        <xs:element minOccurs="0" name="isWebPrivilege" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCommunicationInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="SearchCommunicationInfoResult" nillable="true" type="q170:ResponseMessageOfArrayOfPCCustomerCommunicationInfoISE_P3Nmm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommunicationById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="communicationId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommunicationByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="GetCommunicationByIdResult" nillable="true" type="q171:ResponseMessageOfPCCustomerCommunicationInfoISE_P3Nmm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCommunication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.Customer" minOccurs="0" name="communication" nillable="true" type="q172:PCCommunication" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCommunicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q173="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="InsertCommunicationResult" nillable="true" type="q173:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCommunication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q174="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.Customer" minOccurs="0" name="communication" nillable="true" type="q174:PCCommunication" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCommunicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q175="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="UpdateCommunicationResult" nillable="true" type="q175:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCampaingCustomerInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cusId" type="xs:int" />
+        <xs:element minOccurs="0" name="plate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dontShow" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCampaingCustomerInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q176="http://schemas.datacontract.org/2004/07/GT.Insurance.Common" minOccurs="0" name="AddCampaingCustomerInfoResult" nillable="true" type="q176:ResponseMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

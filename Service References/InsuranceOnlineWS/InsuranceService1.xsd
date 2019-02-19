@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GT.VdfTask.Common.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TaskFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedUserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Explanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileId" type="xs:int" />
+      <xs:element minOccurs="0" name="JiraId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedUserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskFile" nillable="true" type="tns:TaskFile" />
+  <xs:complexType name="ArrayOfview_CustomerTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="view_CustomerTask" nillable="true" type="tns:view_CustomerTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfview_CustomerTask" nillable="true" type="tns:ArrayOfview_CustomerTask" />
+  <xs:complexType name="view_CustomerTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppriseFromWeb" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedUserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailCodeId" type="xs:int" />
+      <xs:element minOccurs="0" name="ReferenceType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ReferenceTypeValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskHeader" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskId" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WebCategoryName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="view_CustomerTask" nillable="true" type="tns:view_CustomerTask" />
+  <xs:complexType name="ArrayOfParTaskSubCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParTaskSubCategory" nillable="true" type="tns:ParTaskSubCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParTaskSubCategory" nillable="true" type="tns:ArrayOfParTaskSubCategory" />
+  <xs:complexType name="ParTaskSubCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedUserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultPoolId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentRequired" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Explanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InfoText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InfoTextMobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModifiedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedUserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenceType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShowAtMobile" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowAtWeb" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StandardFinishDayCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SubCategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskCategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskSubCategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="WebCategoryName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParTaskSubCategory" nillable="true" type="tns:ParTaskSubCategory" />
+  <xs:complexType name="Task">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActualFinishDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActualStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CollectionDemandId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedUserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmanSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentState" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DocumentStateLastCheckDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Explanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinishedUserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HtmlExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Importance" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsCollectionDemand" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDependentTask" type="xs:boolean" />
+      <xs:element minOccurs="0" name="JiraId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedUserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlannedFinishDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PlannedStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReferenceType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ReferenceTypeValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskCategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskChannelId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskHeader" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskHeaderEng" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskId" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskSubCategoryId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Task" nillable="true" type="tns:Task" />
+</xs:schema>

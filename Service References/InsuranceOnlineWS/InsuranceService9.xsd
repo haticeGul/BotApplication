@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Offer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Offer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSucceed" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DoResponse" nillable="true" type="tns:DoResponse" />
+  <xs:complexType name="MobilePolicySummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KaskoInfo" nillable="true" type="tns:PolicyProductSummary" />
+      <xs:element minOccurs="0" name="PolicyHolder" nillable="true" type="tns:MobilePolicyHolderSummary" />
+      <xs:element minOccurs="0" name="TrafikInfo" nillable="true" type="tns:PolicyProductSummary" />
+      <xs:element minOccurs="0" name="VehicleInfo" nillable="true" type="tns:MobilePolicyVehicleInfoSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MobilePolicySummary" nillable="true" type="tns:MobilePolicySummary" />
+  <xs:complexType name="PolicyProductSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfferId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyStartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Premium" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyProductSummary" nillable="true" type="tns:PolicyProductSummary" />
+  <xs:complexType name="MobilePolicyHolderSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CargoAddressExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CargoAddressId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameSurname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyAddressExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyAddressId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MobilePolicyHolderSummary" nillable="true" type="tns:MobilePolicyHolderSummary" />
+  <xs:complexType name="MobilePolicyVehicleInfoSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Asbis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChassisNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EngineNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegSerialNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationInfo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MobilePolicyVehicleInfoSummary" nillable="true" type="tns:MobilePolicyVehicleInfoSummary" />
+  <xs:complexType name="PCCreatePolicyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BkmGetTokenResponse" nillable="true" type="tns:PCBKMGetTokenResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PCCreatePolicyResponse" nillable="true" type="tns:PCCreatePolicyResponse" />
+  <xs:complexType name="PCBKMGetTokenResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BKMErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BKMSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BKMTransactionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BKMUniqueReferans" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BKMUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PCBKMGetTokenResponse" nillable="true" type="tns:PCBKMGetTokenResponse" />
+</xs:schema>

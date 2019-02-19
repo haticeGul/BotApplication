@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.SelfService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfPCCampaingCustomerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PCCampaingCustomerInfo" nillable="true" type="tns:PCCampaingCustomerInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPCCampaingCustomerInfo" nillable="true" type="tns:ArrayOfPCCampaingCustomerInfo" />
+  <xs:complexType name="PCCampaingCustomerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CampaingCustomerInfoId" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="DontShow" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Plate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PCCampaingCustomerInfo" nillable="true" type="tns:PCCampaingCustomerInfo" />
+  <xs:complexType name="ArrayOfPCCampaingDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PCCampaingDefinition" nillable="true" type="tns:PCCampaingDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPCCampaingDefinition" nillable="true" type="tns:ArrayOfPCCampaingDefinition" />
+  <xs:complexType name="PCCampaingDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CampaingDefinitionId" type="xs:int" />
+      <xs:element minOccurs="0" name="CampaingName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampaingTemplate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Explanation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PCCampaingDefinition" nillable="true" type="tns:PCCampaingDefinition" />
+  <xs:complexType name="ArrayOfPcAreaCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PcAreaCode" nillable="true" type="tns:PcAreaCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPcAreaCode" nillable="true" type="tns:ArrayOfPcAreaCode" />
+  <xs:complexType name="PcAreaCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodeValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PcAreaCode" nillable="true" type="tns:PcAreaCode" />
+  <xs:complexType name="ArrayOfPCCustomerCommunicationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PCCustomerCommunicationInfo" nillable="true" type="tns:PCCustomerCommunicationInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPCCustomerCommunicationInfo" nillable="true" type="tns:ArrayOfPCCustomerCommunicationInfo" />
+  <xs:complexType name="PCCustomerCommunicationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommunicationSubType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommunicationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedUserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CusId" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtensionArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedDateString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnformattedPhone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PCCustomerCommunicationInfo" nillable="true" type="tns:PCCustomerCommunicationInfo" />
+  <xs:complexType name="PcOfferCalculationVehicleParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AsbisNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plate1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plate2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plate3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationOrderNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SeatCapacity" type="xs:int" />
+      <xs:element minOccurs="0" name="UsageType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PcOfferCalculationVehicleParameter" nillable="true" type="tns:PcOfferCalculationVehicleParameter" />
+  <xs:complexType name="ArrayOfPCPolicyCollectionResultDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PCPolicyCollectionResultDetail" nillable="true" type="tns:PCPolicyCollectionResultDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPCPolicyCollectionResultDetail" nillable="true" type="tns:ArrayOfPCPolicyCollectionResultDetail" />
+  <xs:complexType name="PCPolicyCollectionResultDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExchangeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Explanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PCPolicyCollectionResultDetail" nillable="true" type="tns:PCPolicyCollectionResultDetail" />
+</xs:schema>

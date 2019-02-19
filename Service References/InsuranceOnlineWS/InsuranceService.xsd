@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Support" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Support" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfPCVehicleModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PCVehicleModel" nillable="true" type="tns:PCVehicleModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPCVehicleModel" nillable="true" type="tns:ArrayOfPCVehicleModel" />
+  <xs:complexType name="PCVehicleModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BrandCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ModelCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ModelName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PCVehicleModel" nillable="true" type="tns:PCVehicleModel" />
+  <xs:complexType name="ArrayOfPCVehicleBrand">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PCVehicleBrand" nillable="true" type="tns:PCVehicleBrand" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPCVehicleBrand" nillable="true" type="tns:ArrayOfPCVehicleBrand" />
+  <xs:complexType name="PCVehicleBrand">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BrandCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BrandName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PCVehicleBrand" nillable="true" type="tns:PCVehicleBrand" />
+  <xs:complexType name="ArrayOfPCVehicleSubModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PCVehicleSubModel" nillable="true" type="tns:PCVehicleSubModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPCVehicleSubModel" nillable="true" type="tns:ArrayOfPCVehicleSubModel" />
+  <xs:complexType name="PCVehicleSubModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BrandName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubModelName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PCVehicleSubModel" nillable="true" type="tns:PCVehicleSubModel" />
+</xs:schema>

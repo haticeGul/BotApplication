@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.Customer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GT.Insurance.CBL.Customer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PCAddress">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PropertyClass">
+        <xs:sequence>
+          <xs:element name="address1Field" nillable="true" type="xs:string" />
+          <xs:element name="address2Field" nillable="true" type="xs:string" />
+          <xs:element name="addressIdField" type="xs:int" />
+          <xs:element name="cityIdField" type="xs:int" />
+          <xs:element name="confirmReasonCodeField" type="xs:int" />
+          <xs:element name="countryIdField" type="xs:int" />
+          <xs:element name="cusIdField" type="xs:int" />
+          <xs:element name="isConfirmedField" type="xs:boolean" />
+          <xs:element name="ownershipField" nillable="true" type="xs:string" />
+          <xs:element name="postalCodeField" nillable="true" type="xs:string" />
+          <xs:element name="residenceTimeField" type="xs:int" />
+          <xs:element name="townCodeField" type="xs:int" />
+          <xs:element name="townField" nillable="true" type="xs:string" />
+          <xs:element name="typeField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PCAddress" nillable="true" type="tns:PCAddress" />
+  <xs:complexType name="PropertyClass">
+    <xs:sequence>
+      <xs:element name="createdDateField" type="xs:dateTime" />
+      <xs:element name="createdUserIdField" nillable="true" type="xs:string" />
+      <xs:element name="modifiedDateField" type="xs:dateTime" />
+      <xs:element name="modifiedUserIdField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyClass" nillable="true" type="tns:PropertyClass" />
+  <xs:simpleType name="PermittedMarketingChannelTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SSS" />
+      <xs:enumeration value="VDFNET" />
+      <xs:enumeration value="MOBILE" />
+      <xs:enumeration value="SOZ" />
+      <xs:enumeration value="SMS" />
+      <xs:enumeration value="ONIS" />
+      <xs:enumeration value="VDFTEL" />
+      <xs:enumeration value="SSSTEL" />
+      <xs:enumeration value="CUSTOMERNET" />
+      <xs:enumeration value="WEBAPP" />
+      <xs:enumeration value="SOZ2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PermittedMarketingChannelTypes" nillable="true" type="tns:PermittedMarketingChannelTypes" />
+  <xs:complexType name="PCCommunication">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PropertyClass">
+        <xs:sequence>
+          <xs:element name="areaCodeField" nillable="true" type="xs:string" />
+          <xs:element name="communicationIdField" type="xs:int" />
+          <xs:element name="contentField" nillable="true" type="xs:string" />
+          <xs:element name="countryCodeField" nillable="true" type="xs:string" />
+          <xs:element name="cusIdField" type="xs:int" />
+          <xs:element name="extensionField" nillable="true" type="xs:string" />
+          <xs:element name="subTypeField" nillable="true" type="xs:string" />
+          <xs:element name="typeField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PCCommunication" nillable="true" type="tns:PCCommunication" />
+</xs:schema>

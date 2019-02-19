@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Security" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GT.Insurance.Common.Security" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="GuestCustomerLoginRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeviceType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneAreaCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneContent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PinCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxOfficeNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TcIdentityNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GuestCustomerLoginRequest" nillable="true" type="tns:GuestCustomerLoginRequest" />
+  <xs:complexType name="GuestCustomerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerNameUnmasked" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomernetCusId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdentityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuranceCusId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LoginPhoneNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GuestCustomerInfo" nillable="true" type="tns:GuestCustomerInfo" />
+</xs:schema>
